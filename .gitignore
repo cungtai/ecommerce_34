@@ -27,3 +27,8 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 app/assets/javascripts/.DS_Store
+.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
+app/assets/images/.DS_Store
+

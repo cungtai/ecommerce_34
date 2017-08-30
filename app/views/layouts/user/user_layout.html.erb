@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= full_title yield :title %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "user/application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <div>
+      <%= link_to image_tag("TruongTin_Logo.png", alt: t("alt.logo"),
+        class: "img-responsive", width: "150px", align: "left"), root_path %>
+      <h1><%= t("pages.company_name") %></h1>
+      </div>
+      <div><p><%= t("pages.sologan") %></p></div>
+    </div>
+  </div>
+  <%= render "layouts/user/header" %>
+  <%= yield %>
+  <br><br>
+  <%= render "layouts/user/footer" %>
+  </body>
+</html>

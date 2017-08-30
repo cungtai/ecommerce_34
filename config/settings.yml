@@ -6,6 +6,11 @@ maximum:
   email: 255
   content: 255
 default:
+  static_page:
+    about: "pages/about"
+    why_us: "pages/why-us"
+    ship_cod: "pages/ship-cod"
+    warning: "pages/warning"
   user:
     activated: 1
     not_activated: 0
