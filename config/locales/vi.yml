@@ -40,6 +40,11 @@ vi:
         email: "Email"
         address: "Địa chỉ"
         phone: "Điện thoại"
+    orders:
+      title: "Products"
+      status_waiting: "Đang chờ"
+      status_finished: "Hoàn thành"
+      save_change: "Luu thay doi"
     menu:
       dashboard: "Bảng điều kiển"
       users: "Quản lý người dùng"

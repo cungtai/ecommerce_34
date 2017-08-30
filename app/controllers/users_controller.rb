@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   layout "user/user_layout"
   before_action :correct_user, only: [:edit, :update]
-
   def show
     @user = User.find_by id: params[:id]
     return if @user

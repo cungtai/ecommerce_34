@@ -1,0 +1,23 @@
+<% provide(:title, t("admin.orders.edit_user")) %>
+<h1><%= t("admin.orders.update") %> </h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @order] do |f| %>
+
+      <%= f.label :receiver_name %>
+      <%= f.text_field :receiver_name, class: "form-control" %>
+
+      <%= f.label :receiver_email %>
+      <%= f.email_field :receiver_email, class: "form-control" %>
+
+      <%= f.label :receiver_phone %>
+      <%= f.text_field :receiver_phone, class: "form-control" %>
+
+      <%= f.label :amount %>
+      <%= f.text_field :amount, class: "form-control" %>
+
+      <%= f.submit t("admin.orders.save_change"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

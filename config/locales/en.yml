@@ -40,6 +40,11 @@ en:
         email: "Email"
         address: "Address"
         phone: "Phone"
+    orders:
+      title: "Products"
+      status_waiting: "Waiting"
+      status_finished: "Finished"
+      save_change: "Save Change"
     menu:
       dashboard: "Dashboard"
       users: "Users"
