@@ -3,9 +3,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :avatar
-      t.string :phone
-      t.string :address
+      t.string :avatar, null: false
+      t.string :phone, null: false
+      t.string :address, null: false
       t.string :password_digest
       t.integer :role, default: Settings.default.role.user
       t.string :activate_token

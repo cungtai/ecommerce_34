@@ -1,4 +1,5 @@
 vi:
+  app_name: "Truong tin"
   pages:
     company_name: "Công ty TNHH Trường Tín"
     title: "Công ty TNHH Trường Tín"
@@ -15,6 +16,13 @@ vi:
     warning: "Cảnh báo"
     get_deals: "Nhận thông tin khuyến mãi:"
     sologan: "UY TÍN - CHẤT LƯỢNG - GIÁ TỐT"
+    help: "Giup do"
+    profile: "Thong tin"
+    setting: "Cai dat"
+  signup: "Dang ky"
+  sigin: "Dang nhap"
+  logout: "Thoat"
+  sign_up_now: "Dang ky ngay!"
   admin:
     bar:
       title: "Quản lý hệ thống"
@@ -38,3 +46,16 @@ vi:
       static_pages: "Quản lý các trang tĩnh"
       all_static_pages: "Xem tất cả trang"
       add_static_pages: "Thêm mới trang"
+  messages:
+    register:
+    success: "Dang ky thanh cong"
+    failed: "Dang ky that bai"
+    users:
+      user_not_found: "Khong tim thay nguoi dung"
+      update_profile_sucess: "Cap nhat thanh cong"
+      update_profile_failed: "Opp!!! Cap nhat khong thanh cong"
+      invalid_email_or_password: "Sai mat khau hoac mat khau"
+  users:
+    create_my_account: "Tao tai khoan"
+    confirm: "Xac nhan"
+    new_user: "Nguoi dung moi"
