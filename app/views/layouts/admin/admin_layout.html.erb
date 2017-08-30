@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= full_title yield :title %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "admin/application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+  <div class="container-fluid">
+
+      <!-- Example row of columns -->
+      <div class="row-fluid">
+        <div class="col-md-3">
+          <div class="col-md-3"><%= render "layouts/admin/slide_left" %></div>
+        </div>
+        <div class="col-md-9" id="wrapper">
+          <div class="masthead">
+              <%= render "layouts/admin/header" %>
+          </div>
+          <div class="col-md-9"><%= yield %></div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="footer navbar-fixed-bottom">
+        <%= render "layouts/admin/footer" %>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>

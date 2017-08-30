@@ -1,0 +1,44 @@
+maximum:
+  name: 50
+  address: 255
+  phone: 11
+  password: 6
+  email: 255
+  content: 255
+default:
+  user:
+    activated: 1
+    not_activated: 0
+  role:
+    admin: 0
+    editor: 1
+    user: 2
+  order:
+    finished: 0
+    waiting: 1
+  order_detail:
+    ready: 1
+    not_ready: 0
+  suggest_product:
+    processed: 0
+    waiting: 1
+  top_new_products: 12
+  top_order_products: 12
+  number_of_order: 0
+  recently: 12
+  same_category: 10
+  round: 1
+  min_product: 0
+  quantity_cart_item: 1
+
+minrate: 1
+maxrate: 5
+ratestep: 0.1
+
+per_pagess:
+  users: 5
+per_page:
+  suggest: 5
+  product: 10
+  order: 5
+min_product: 1

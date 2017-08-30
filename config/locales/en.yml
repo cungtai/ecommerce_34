@@ -1,4 +1,27 @@
 en:
   pages:
-    CompanyName: "Truong Tin Limited Company"
+    company_name: "Truong Tin Limited Company"
     title: "Truong Tin Co.,Ltd"
+  admin:
+    bar:
+      title: "Admin Panel"
+    menu:
+      dashboard: "Dashboard"
+      users: "Users"
+      all_users: "All Users"
+      add_user: "Add User"
+      catalogs: "Catalogs"
+      all_catalogs: "All Catalogs"
+      add_catalogs: "Add Catalogs"
+      products: "Products"
+      all_users: "All Users"
+      add_user: "Add User"
+      orders: "Orders"
+      payments: "Payments"
+      all_payments: "All Payments"
+      add_payment: "Add Payments"
+      suggest_products: "Suggest Products"
+      feedback: "Feedback"
+      static_pages: "Static Pages"
+      all_static_pages: "All Static Pages"
+      add_static_pages: "Add Static Page"
