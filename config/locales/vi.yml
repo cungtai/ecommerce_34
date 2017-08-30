@@ -1,0 +1,27 @@
+vi:
+  pages:
+    company_name: "Công ty TNHH Trường Tín"
+    title: "Công ty TNHH Trường Tín"
+  admin:
+    bar:
+      title: "Quản lý hệ thống"
+    menu:
+      dashboard: "Bảng điều kiển"
+      users: "Quản lý người dùng"
+      all_users: "Xem tất cả người dùng"
+      add_user: "Thêm mới người dùng"
+      catalogs: "Quản lý danh mục"
+      all_catalogs: "Xem tất cả danh mục"
+      add_catalogs: "Thêm danh mục"
+      products: "Quản lý sản phẩm"
+      all_users: "Xem tất cả sản phẩm"
+      add_user: "Thêm sản phẩm"
+      orders: "Quản lý đơn hàng"
+      payments: "Quản lý phương thức thanh toán"
+      all_payments: "Xem tất cả phương thức"
+      add_payment: "Thêm phương thức"
+      suggest_products: "Quản lý sản phẩm đề nghị"
+      feedback: "Quản lý liên hệ"
+      static_pages: "Quản lý các trang tĩnh"
+      all_static_pages: "Xem tất cả trang"
+      add_static_pages: "Thêm mới trang"

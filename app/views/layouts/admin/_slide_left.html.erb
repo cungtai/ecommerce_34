@@ -1,0 +1,85 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="nav-side-menu">
+    <div class="brand"><%= t("admin.bar.title") %></div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="#">
+                  <i class="fa fa-dashboard fa-lg"></i><%= t("admin.menu.dashboard")%>
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#users" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i><%= t("admin.menu.users")%><span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="users">
+                    <li class="active"><a href="#"><%= t("admin.menu.all_users") %></a></li>
+                    <li><a href="#"><%= t("admin.menu.add_user") %></a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> <%= t("admin.menu.catalogs") %> <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="service">
+                  <li><%= t("admin.menu.all_catalogs") %></li>
+                  <li><%= t("admin.menu.add_catalog") %></li>
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.products") %> <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li><%= t("admin.menu.all_products") %></li>
+                  <li><%= t("admin.menu.add_product") %></li>
+                </ul>
+                <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> <%= t("admin.menu.orders") %>
+                  </a>
+                  </li>
+                  <li data-toggle="collapse" data-target="#payments" class="collapsed">
+                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.payments") %> <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="payments">
+                  <li><%= t("admin.menu.all_payments") %></li>
+                  <li><%= t("admin.menu.add_payment") %></li>
+                </ul>
+                 <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> <%= t("admin.menu.suggest_products") %>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <i class="fa fa-users fa-lg"></i> <%= t("admin.menu.feedback") %>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  <i class="fa fa-user fa-lg"></i> <%= t("admin.menu.static_pages") %>
+                  </a>
+                  </li>
+                  <li data-toggle="collapse" data-target="#staticpages" class="collapsed">
+                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.static_pages") %> <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="staticpages">
+                  <li><%= t("admin.menu.all_static_pages") %></li>
+                  <li><%= t("admin.menu.add_static_page") %></li>
+                </ul>
+                <!-- .logout wAS HERE -->
+            </ul>
+            <!-- MOVED TO HERE -->
+            <div class="logout">
+                <li>
+                    <a>
+                      <i class="glyphicon glyphicon-off"></i> LOGOUT
+                     </a>
+                </li>
+             </div>
+     </div>
+</div>
