@@ -2,6 +2,7 @@ en:
   default:
     search: "Search"
     you_sure: "Are you sure to delete this item?"
+  site_name: "Truong tin"
   pages:
     company_name: "Truong Tin Limited Company"
     title: "Truong Tin Co.,Ltd"
@@ -18,6 +19,14 @@ en:
     warning: "Warning"
     get_deals: "Get deals:"
     sologan: "REPUTATION - GOOD SERVICE - BEST PRICE"
+    help: "Help"
+    profile: "Profile"
+    setting: "Settings"
+    sign_up: "Sign up"
+    sigin: "Sign in"
+    logout: "Logout"
+    sign_up_now: "Sign up now!"
+    account: "Account"
   admin:
     bar:
       title: "Admin Panel"
@@ -51,3 +60,19 @@ en:
       static_pages: "Static Pages"
       all_static_pages: "All Static Pages"
       add_static_pages: "Add Static Page"
+  messages:
+    register:
+      success: "Success register"
+      failed: "Failed register"
+    users:
+      user_not_found: "User not found"
+      update_profile_sucess: "Update profile success"
+      update_profile_failed: "Opp!!! Update profile failed"
+      invalid_email_or_password: "Invalid email/password combination"
+  users:
+    create_my_account: "Create my account"
+    confirm: "Confirm"
+    new_user: "New user"
+    update_your_profile: "Update your profile"
+    edit_user: "Edit user"
+    save_changes: "Save changes"

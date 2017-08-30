@@ -2,9 +2,16 @@ maximum:
   name: 50
   address: 255
   phone: 11
-  password: 6
+  password: 16
   email: 255
   content: 255
+minimum:
+  name: 10
+  address: 10
+  phone: 11
+  password: 6
+  email: 6
+  content: 50
 default:
   static_page:
     about: "pages/about"
