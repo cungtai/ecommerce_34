@@ -28,15 +28,13 @@
           <th><%= user.email %></th>
           <th><%= user.address %></th>
           <th><%= user.phone %></th>
-          <th>
-            <%= link_to edit_admin_user_path user do %>
+          <th><%= link_to edit_admin_user_path user do %>
             <strong class="glyphicon glyphicon-pencil"></strong>
-            <% end %>
-          </th>
+            <% end %></th>
           <th>
             <%= link_to [:admin, user], method: :delete,
-            data: {confirm:t("default.you_sure")} do %>
-            <strong class="glyphicon glyphicon-trash"></strong>
+              data: {confirm: t("default.you_sure")} do %>
+              <strong class="glyphicon glyphicon-trash"></strong>
             <% end %>
           </th>
       </tr>
@@ -44,4 +42,3 @@
   </tbody>
 </table>
 <%= will_paginate @users %>
-

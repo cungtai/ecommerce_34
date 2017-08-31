@@ -1,5 +1,6 @@
 class Admin::UsersController < BaseAdminController
   before_action :load_user, only: [:show, :destroy]
+
   def index
     @users = User.by_name(params[:search]).paginate page: params[:page],
       per_page: Settings.per_page.users
@@ -27,4 +28,5 @@ class Admin::UsersController < BaseAdminController
       redirect_to request.referer
     end
   end
+
 end
