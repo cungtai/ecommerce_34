@@ -2,6 +2,19 @@ vi:
   pages:
     company_name: "Công ty TNHH Trường Tín"
     title: "Công ty TNHH Trường Tín"
+    updating_information: "Updating Information...!"
+    home: "Trang chủ"
+    products: "Laptop"
+    accessories: "Linh kiện"
+    contact: "Liên hệ"
+    welcome: "Xin chào, "
+    cart: "Giỏ hàng"
+    about_us: "Về chúng tôi"
+    why_us: "Tại sao chọn Trường Tín"
+    ship_cod: "Mua hàng từ xa"
+    warning: "Cảnh báo"
+    get_deals: "Nhận thông tin khuyến mãi:"
+    sologan: "UY TÍN - CHẤT LƯỢNG - GIÁ TỐT"
   admin:
     bar:
       title: "Quản lý hệ thống"

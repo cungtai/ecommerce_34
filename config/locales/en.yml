@@ -2,6 +2,19 @@ en:
   pages:
     company_name: "Truong Tin Limited Company"
     title: "Truong Tin Co.,Ltd"
+    updating_information: "Updating Information...!"
+    home: "Home"
+    products: "Products"
+    accessories: "Accessories"
+    contact: "Contacts"
+    welcome: "Welcome, "
+    cart: "Cart"
+    about_us: "About Us"
+    why_us: "Why Us"
+    ship_cod: "Ship COD"
+    warning: "Warning"
+    get_deals: "Get deals:"
+    sologan: "REPUTATION - GOOD SERVICE - BEST PRICE"
   admin:
     bar:
       title: "Admin Panel"
