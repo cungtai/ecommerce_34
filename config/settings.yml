@@ -45,6 +45,9 @@ default:
       sort_asc_quantity: "sort_asc_quantity"
       sort_desc_names: "sort_desc_names"
       sort_asc_names: "sort_asc_names"
+    row_header: 1
+    image_size: 64
+    empty_image: "empty_avatar.png"
   top_new_products: 12
   top_order_products: 12
   number_of_order: 0
@@ -53,6 +56,7 @@ default:
   round: 1
   min_product: 0
   quantity_cart_item: 1
+  link_file_import_products: "/shared/import_products_template.xlsx"
 
 minrate: 1
 maxrate: 5
@@ -61,7 +65,7 @@ ratestep: 0.1
 per_page:
   users: 5
   suggest: 5
-  product: 10
+  product: 8
   order: 5
   min_product: 1
   catalog: 5
@@ -70,3 +74,4 @@ suggest_products:
     size: 64
     width: 64
     heigh: 64
+  catalog: 5

@@ -1,0 +1,25 @@
+<% provide :title, t("admin.products.update.title") %>
+<h1 class="col-sm-8 col-sm-offset-4">
+  <%= t("admin.products.update.title") %>
+</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @product] do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :quantity %>
+      <%= f.text_field :qty, class: "form-control" %>
+
+      <%= f.label :tag %>
+      <%= f.text_field :tag, class: "form-control" %>
+
+      <%= f.label :catalog %>
+      <%= f.collection_select :catalog_id, Catalog.order_catalogs, :id, :name,
+         {}, {class: "form-control"} %>
+
+      <%= f.submit t("admin.products.update.save_change"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

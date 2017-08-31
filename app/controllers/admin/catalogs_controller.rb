@@ -1,5 +1,5 @@
 class Admin::CatalogsController < BaseAdminController
-  before_action :load_catalog, only: [:destroy, :edit, :update]
+  before_action :load_catalog, except: [:create, :new, :index]
 
   def index
     @catalogs = Catalog.by_name(params[:search]).order_catalogs.paginate(page: params[:page],

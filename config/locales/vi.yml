@@ -57,6 +57,35 @@ vi:
         create_fail: "Có lỗi xảy ra khi tạo danh mục!"
         title: "Thêm mới danh mục"
         create_button: "Thêm mới"
+    products:
+      default:
+        product_not_found: "The product is not found!"
+        link_file_download: "Tải file mẫu"
+      index:
+        title: "Danh sách các sản phẩm"
+        product_name: "Tên sản phẩm"
+        image: "Ảnh minh hoạ"
+        price: "Giá áp dụng"
+        quantity: "Số lượng hiện có"
+        viewed: "Số lượt xem"
+        tag: "Thẻ"
+      create:
+        title: "Thêm mới sản phẩm"
+        create_success: "Tạo mới sản phẩm thành công!"
+        create_fail: "Có lỗi xảy ra khi tạo sản phẩm!"
+        create_button: "Tạo mới"
+      delete:
+        delete_success: "Xoá thành công sản phẩm này!"
+        delete_fail: "Có lỗi xảy ra khi xoá sản phẩm này!"
+      update:
+        title: "Cập nhật sản phẩm"
+        save_change: "Lưu lại"
+        update_success: "The product is updated successfully!"
+        update_fail: "Fail to update this product!"
+      import:
+        title: "Nhập sản phẩm từ file dữ liệu"
+        import_button: "Nạp dữ liệu"
+        import_success: "Nạp dữ liệu thành công!"
     orders:
       title: "Products"
       status_waiting: "Đang chờ"

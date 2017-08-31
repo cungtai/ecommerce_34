@@ -16,9 +16,24 @@ class Product < ApplicationRecord
   scope :sort_name, -> type {order name: type if type.present?}
   scope :sort_qty, -> type {order qty: type if type.present?}
 
-  def main_image
+  scope :by_name, ->name do
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end
+
+  scope :order_products, -> {order "created_at desc"}
+
+  def self.import(file, user)
+    spreadsheet = Roo::Spreadsheet.open(file.path)
+    header = spreadsheet.row(Settings.default.product.row_header)
+    (2..spreadsheet.last_row).each do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
+      user.products.create! row.to_hash
+    end
+  end
+
+  def primary_image
     return if images.where("is_primary", true).first
-    Settings.default.product.image_empty
+    Settings.default.product.empty_image
   end
 
 end

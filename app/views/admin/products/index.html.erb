@@ -1,17 +1,49 @@
-<% provide :title, t("all_product") %>
-<h1><%= t("all_product") %> </h1>
-<table class="table table-hover">
-  <thead>
+<% provide :title, t("admin.products.index.title") %>
+<h1><%= t("admin.products.index.title") %></h1>
+<%= form_tag admin_products_path, method: :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag t("default.search"), name: nil %>
+  </p>
+<% end %>
+<table class="table">
+  <thead class="thead-inverse">
     <tr>
-      <th class="text-center"><%= t("product_name") %></th>
-      <th class="text-center"><%= t("image") %></th>
-      <th class="text-center"><%= t("description") %></th>
-      <th class="text-center"><%= t("price") %></th>
-      <th class="text-center"></th>
+      <th>#</th>
+      <th><%= t("admin.products.index.image") %></th>
+      <th><%= t("admin.products.index.product_name") %></th>
+      <th><%= t("admin.products.index.quantity") %></th>
+      <th><%= t("admin.products.index.viewed") %></th>
+      <th><%= t("admin.products.index.tag") %></th>
+      <th>#</th>
+      <th>#</th>
     </tr>
   </thead>
   <tbody>
-    <%= render @products %>
-    <%= will_paginate  %>
+    <% @products.each_with_index do |product, index| %>
+      <tr>
+          <th scope="row"><%= show_index_p index %></th>
+          <th>
+            <%= image_tag product.primary_image, size: Settings.default.product.image_size,
+            alt: product.name, class: "gravatar" %>
+          </th>
+          <th><%= link_to product.name, product %></th>
+          <th><%= product.qty %></th>
+          <th><%= product.viewed %></th>
+          <th><%= product.tag %></th>
+          <th>
+            <%= link_to edit_admin_product_path product do %>
+              <strong class="glyphicon glyphicon-pencil"></strong>
+            <% end %>
+          </th>
+          <th>
+            <%= link_to [:admin, product], method: :delete,
+              data: {confirm: t("default.you_sure")} do %>
+              <strong class="glyphicon glyphicon-trash"></strong>
+            <% end %>
+          </th>
+      </tr>
+    <% end %>
   </tbody>
 </table>
+<%= will_paginate @products %>
