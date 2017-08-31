@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   layout "user/user_layout"
   before_action :correct_user, only: [:edit, :update]
 
-  def index
-
-  end
+  def index; end
 
   def show
     @user = User.find_by id: params[:id]
@@ -27,8 +25,7 @@ class UsersController < ApplicationController
     redirect_to request.referer
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update_attributes user_params

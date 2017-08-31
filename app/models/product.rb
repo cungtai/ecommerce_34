@@ -25,11 +25,9 @@ class Product < ApplicationRecord
   def self.import(file, user)
     spreadsheet = Roo::Spreadsheet.open(file.path)
     header = spreadsheet.row(Settings.default.product.row_header)
-    (2..spreadsheet.last_row).each do |i|
-      row = Hash[[header, spreadsheet.row(i)].transpose]
-      user.products.create! row.to_hash
-    end
   end
+
+  scope :top_order_products, -> {order "number_of_order desc"}
 
   def primary_image
     return if images.where("is_primary", true).first

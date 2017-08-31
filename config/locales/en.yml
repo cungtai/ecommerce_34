@@ -2,6 +2,8 @@ en:
   default:
     search: "Search"
     you_sure: "Are you sure to delete this item?"
+    next: "Next"
+    previous: "Previous"
   pages:
     company_name: "Truong Tin Limited Company"
     title: "Truong Tin Co.,Ltd"
@@ -144,6 +146,12 @@ en:
       delete:
         success: "Delete success"
         failed: "Delete failed"
+  product:
+      view_detail: "Details"
+      add_to_cart: "Add to Cart"
+      image: "Image Product"
+      recently_products_title: "Recently Viewed Products"
+      hot_order_products_title: "Best Seller Products"
   messages:
     register:
       success: "Success register"

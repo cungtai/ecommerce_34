@@ -2,6 +2,8 @@ vi:
   default:
     search: "Tìm kiếm"
     you_sure: "Bạn chắc chắn muốn xoá mục này?"
+    next: "Tiếp"
+    previous: "Sau"
   site_name: "Truong tin"
   pages:
     company_name: "Công ty TNHH Trường Tín"
@@ -111,6 +113,32 @@ vi:
       static_pages: "Quản lý các trang tĩnh"
       all_static_pages: "Xem tất cả trang"
       add_static_pages: "Thêm mới trang"
+    suggest_products:
+      index:
+        title: "Danh sách sản phẩm đề nghị từ khách hàng"
+      edit:
+        title: "Cập nhật"
+        waiting: "Chờ xử lý"
+        finished: "Đã xử lý"
+        save_change: "Lưu lại"
+        image: "Ảnh"
+        name: "Tên sản phẩm"
+        description: "Mô tả"
+        price: "Giá"
+        user_name: "Người dùng"
+        status: "Tình trạng"
+      update:
+        success: "Cập nhật thành công!"
+        failed: "Có lỗi xảy ra!"
+      delete:
+        success: "Xoá thành công!"
+        failed: "Có lỗi xảy ra!"
+  product:
+      see_detail: "Chi tiết"
+      add_to_cart: "Thêm vào giỏ"
+      image: "Hình ảnh sản phẩm"
+      recently_products_title: "Sản phẩm đã xem"
+      hot_order_products_title: "Sản phẩm bán chạy"
   messages:
     register:
     success: "Dang ky thanh cong"

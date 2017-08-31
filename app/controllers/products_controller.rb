@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     unless recently_viewed
       recently_viewed = current_user.recently_vieweds.build product_id: @product.id
       if recently_viewed.save
-        if current_user.recently_vieweds.count > Settings.default.recently
+        if current_user.recently_vieweds.count > Settings.default.product.recently
           RecentlyViewed.destroy current_user.recently_vieweds.first
         end
       else
