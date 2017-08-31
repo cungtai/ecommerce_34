@@ -1,6 +1,5 @@
 class Admin::ProductsController < BaseAdminController
-  include ProductsHelper
-  before_action :load_product, only: [:destroy, :update, :edit]
+  before_action :authenticate_user!, :load_product, only: [:destroy, :update, :edit]
 
   def new
     @product = Product.new
@@ -29,6 +28,14 @@ class Admin::ProductsController < BaseAdminController
       flash[:success] = t "admin.products.delete.product_delete"
     else
       flash[:danger] = t "admin.products.delete.product_fails"
+    end
+  end
+
+  def update
+    if @product.update_attributes product_params
+      flash[:success] = t "admin.products.update.update_success"
+    else
+      flash[:danger] = t "admin.products.update.update_fail"
     end
   end
 

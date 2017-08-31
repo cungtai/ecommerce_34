@@ -15,4 +15,13 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def is_admin!
+    unless current_user.role == Settings.default.role.admin
+      sign_out current_user
+      redirect_to root_path
+    end
+    return true
+  end
+
 end

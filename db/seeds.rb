@@ -1,6 +1,6 @@
 10.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "cnptai#{n+1}@hueic.edu.vn"
   password = "123456"
   phone = "0909090"
   address = "Da Nang"

@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product.update_attributes viewed: (@product.viewed + 1)
+    @product.update_attributes viewed: (@product.viewed + Settings.default.product.increase_view)
     save_recently_view if current_user.present?
   end
 

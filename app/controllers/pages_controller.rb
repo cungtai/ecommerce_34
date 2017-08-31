@@ -4,9 +4,11 @@ class PagesController < ApplicationController
     @top_order_products = Product.top_order_products
       .take(Settings.default.product.top_order_products)
 
-    @recently_view_products = current_user
-      .recently_vieweds.limit(Settings.default.product.recently_view_products)
-      .map {|rv| rv.product}
+    if current_user.present?
+      @recently_view_products = current_user
+        .recently_vieweds.limit(Settings.default.product.recently_view_products)
+        .map {|rv| rv.product}
+    end
   end
 
   def page
