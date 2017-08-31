@@ -10,7 +10,9 @@ gem "rails", "~> 5.1.3"
 gem "bcrypt", "3.1.11"
 gem "config"
 gem "bootstrap-sass", "3.3.7"
-gem 'mysql2', '~> 0.3.18'
+gem "mysql2", "~> 0.3.18"
+gem "carrierwave"
+gem "mini_magick"
 # Use sqlite3 as the database for Active Record
 #gem "sqlite3"
 # Use Puma as the app server
@@ -53,6 +55,8 @@ group :development do
   gem "listen", "3.0.8"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring", "2.0.2"
+  gem "factory_girl_rails"
+  gem "faker"
   gem "spring-watcher-listen", "2.0.1"
 end
 

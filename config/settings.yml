@@ -5,6 +5,13 @@ maximum:
   password: 6
   email: 255
   content: 255
+minimum:
+  name: 10
+  address: 10
+  phone: 11
+  password: 6
+  email: 6
+  content: 50
 default:
   static_page:
     about: "pages/about"
@@ -40,10 +47,9 @@ minrate: 1
 maxrate: 5
 ratestep: 0.1
 
-per_pagess:
-  users: 5
 per_page:
+  users: 5
   suggest: 5
   product: 10
   order: 5
-min_product: 1
+  min_product: 1
