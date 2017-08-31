@@ -12,15 +12,13 @@
   </head>
   <body>
   <div id="fb-root"></div>
-  <div class="jumbotron">
-    <div class="container text-center">
-      <div>
+  <div class="container text-center">
+    <div>
       <%= link_to image_tag("TruongTin_Logo.png", alt: t("alt.logo"),
-        class: "img-responsive", width: "150px", align: "left"), root_path %>
-      <h1><%= t("pages.company_name") %></h1>
-      </div>
-      <div><p><%= t("pages.sologan") %></p></div>
+        class: "img-responsive logo"), root_path %>
+      <h1><%= t "pages.company_name" %></h1>
     </div>
+    <div><p><%= t "pages.sologan" %></p></div>
   </div>
   <%= render "layouts/user/header" %>
   <% flash.each do |message_type, message| %>

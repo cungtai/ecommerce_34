@@ -1,9 +1,10 @@
 class Admin::ProductsController < BaseAdminController
-  include ProductsHelper
+  before_action :authenticate_user!
   before_action :load_product, only: [:destroy, :update, :edit]
 
   def new
-    @product = Product.new
+    @product = current_user.products.new
+    @product.images.new
   end
 
   def show; end
@@ -14,7 +15,8 @@ class Admin::ProductsController < BaseAdminController
   end
 
   def create
-    if current_user.products.build product_params
+    @product = current_user.products.new product_params
+    if @product.save
       flash[:success] = t "admin.products.create.create_success"
     else
       flash[:danger] = t "admin.products.create.create_fail"
@@ -49,7 +51,7 @@ class Admin::ProductsController < BaseAdminController
   private
   def product_params
     params.require(:product).permit :name, :qty,
-      :tag, :catalog_id
+      :tag, :catalog_id, images_attributes: [:id, :url, :name, :is_primary]
   end
 
   def load_product

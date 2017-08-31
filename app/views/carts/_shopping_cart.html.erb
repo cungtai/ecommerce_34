@@ -1,0 +1,4 @@
+<h1><%= t ".total_order" %>: <%= @cart.total_order  %>$</h1>
+<% @cart.items.each do |item| %>
+  <%= render 'carts/cart_row', product: find_product(item.product_id), item: item, show_total: true %>
+<% end %>

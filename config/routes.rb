@@ -1,23 +1,26 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "admin/index"
   get "/home", to: "page#home"
   get "/help", to: "page#help"
   get "/profile", to: "page#profile"
   get "/settings", to: "page#settings"
-
-  root "pages#index"
+  root "products#index"
   get "/home", to: "pages#index"
   get "/pages/:pagename", to: "pages#page", as: "pages"
-  get "/signup", to: "registers#new"
-  post "/signup", to: "registers#create"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  get "/logout", to: "sessions#destroy"
   resources :users
   resources :suggest_products
-  resources :products
+  resources :products do
+    collection do
+       get "/catalog/:cat_id", to: "products#catalog", as: "catalog"
+    end
+  end
   resources :orders
   resources :catalogs
+  resources :ratings
+  resources :order_details
+  resources :carts
+  resources :items
   namespace :admin do
     resources :users
     resources :orders

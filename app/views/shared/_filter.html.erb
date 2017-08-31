@@ -1,17 +1,17 @@
 <div class="row">
   <%= form_tag products_path, method: :get do =%>
     <div class="col-md-3">
-      <label>Sort by Prices:</label>
+      <label><%= t "sort_by_price" %></label>
       <%= select("", "sort_price", sort_options, {selected: params[:sort_price]},
       {class: "form-control"}) %>
     </div>
     <div class="col-md-3">
-      <label>Sort by Names:</label>
+      <label><%= t "sort_by_name" %></label>
       <%= select("", "sort_name", sort_options, {selected: params[:sort_name]},
       {class: "form-control"}) %>
     </div>
     <div class="col-md-3">
-      <label>Sort by Quantity:</label>
+      <label><%= t "sort_by_quantity" %></label>
       <%= select("", "sort_qty", sort_options, {selected: params[:sort_qty]},
       {class: "form-control"}) %>
     </div>

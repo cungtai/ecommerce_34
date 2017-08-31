@@ -1,4 +1,5 @@
 class Admin::UsersController < BaseAdminController
+  before_action :authenticate_user!
   before_action :load_user, only: [:show, :destroy]
 
   def index
@@ -6,7 +7,10 @@ class Admin::UsersController < BaseAdminController
       per_page: Settings.per_page.users
   end
 
-  def show
+  def show; end
+
+  def edit
+
   end
 
   def create
@@ -14,9 +18,9 @@ class Admin::UsersController < BaseAdminController
 
   def destroy
     if @user.destroy
-      flash[:success] = t "show_users.user_deleted"
+      flash[:success] = t "admin.pages.show_users.user_deleted"
     else
-      flash[:danger] = t "show_users.user_not_found"
+      flash[:danger] = t "admin.pages.show_users.user_not_found"
     end
     redirect_to request.referer
   end
@@ -24,7 +28,7 @@ class Admin::UsersController < BaseAdminController
   def load_user
     @user = User.find_by id: params[:id]
     if @user.blank?
-      flash[:danger] = t "show_users.user_not_found"
+      flash[:danger] = t "admin.pages.show_users.user_not_found"
       redirect_to request.referer
     end
   end

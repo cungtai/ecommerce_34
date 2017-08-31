@@ -1,0 +1,7 @@
+<p><%= t("users.hello") %><%= @resource.email %>!</p>
+
+<p><%= t("users.notify_lock_account_email") %></p>
+
+<p><%= t("users.header_unlock_account_email") %></p>
+
+<p><%= link_to t("users.unlock_account_button"), unlock_url(@resource, unlock_token: @token) %></p>

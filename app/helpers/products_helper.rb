@@ -1,5 +1,4 @@
 module ProductsHelper
-
   def empty_image
     ActionController::Base.helpers.asset_path ("empty_avatar.png")
   end

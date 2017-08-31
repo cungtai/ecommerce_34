@@ -1,0 +1,25 @@
+<div class="row">
+  <%= form_tag catalog_products_path , method: :get do =%>
+    <div class="col-md-3">
+      <label><%= t "sort_by_price" %></label>
+      <%= select("", "sort_price", sort_options, {selected: params[:sort_price]},
+      {class: "form-control"}) %>
+    </div>
+    <div class="col-md-3">
+      <label><%= t "sort_by_name" %></label>
+      <%= select("", "sort_name", sort_options, {selected: params[:sort_name]},
+      {class: "form-control"}) %>
+    </div>
+    <div class="col-md-3">
+      <label><%= t "sort_by_quantity" %></label>
+      <%= select("", "sort_qty", sort_options, {selected: params[:sort_qty]},
+      {class: "form-control"}) %>
+    </div>
+    <div class="col-md-3">
+      <label>#</label>
+      <%= submit_tag t("submit"), class: "btn-primary form-control" %>
+    </div>
+  </div>
+  <% end %>
+<br/>
+<div class="row">

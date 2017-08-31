@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "user/user_layout"
+  layout "layouts/user/user_layout"
   before_action :correct_user, only: [:edit, :update]
 
   def index; end
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
     flash[:danger] = t "messages.users.user_not_found"
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 
   def new

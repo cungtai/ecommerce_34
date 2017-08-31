@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170829090731) do
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "product_id"
-    t.string "CreateImages"
+    t.string "name"
     t.string "url"
     t.boolean "is_primary", default: false
     t.datetime "created_at", null: false
@@ -73,14 +73,14 @@ ActiveRecord::Schema.define(version: 20170829090731) do
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
-    t.bigint "payment_id"
+    t.bigint "user_id", default: 1
+    t.bigint "payment_id", default: 1
     t.string "receiver_name"
     t.string "receiver_email"
     t.string "receiver_phone"
     t.decimal "amount", precision: 10, default: "0"
     t.string "message"
-    t.integer "status", default: 1
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["payment_id"], name: "index_orders_on_payment_id"
@@ -173,13 +173,21 @@ ActiveRecord::Schema.define(version: 20170829090731) do
     t.string "avatar"
     t.string "phone"
     t.string "address"
-    t.string "password_digest"
     t.integer "role", default: 2
     t.string "activate_token"
     t.string "remember_token"
     t.boolean "is_activated", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
