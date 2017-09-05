@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
   has_many :recently_vieweds, dependent: :destroy
   has_many :static_pages, dependent: :destroy
   has_many :orders, dependent: :destroy

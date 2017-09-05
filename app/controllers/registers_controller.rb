@@ -8,7 +8,7 @@ class RegistersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "messages.register.success"
-      redirect_to @user
+      log_in @user
     else
       flash[:danger] = t "messages.register.failed"
       render :new
