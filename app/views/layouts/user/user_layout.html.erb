@@ -22,6 +22,9 @@
     </div>
   </div>
   <%= render "layouts/user/header" %>
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
   <%= yield %>
   <br><br>
   <%= render "layouts/user/footer" %>
