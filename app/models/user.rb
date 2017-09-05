@@ -2,11 +2,10 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :recently_vieweds, dependent: :destroy
   has_many :static_pages, dependent: :destroy
-  has_many :payments, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :suggest_products, dependent: :destroy
-  has_many :raitings, dependent: :destroy
+  has_many :ratings, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.maximum.name}
 
@@ -19,4 +18,9 @@ class User < ApplicationRecord
 
   before_save {email.downcase!}
   has_secure_password
+
+  scope :by_name, ->name do
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end
+
 end

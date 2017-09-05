@@ -47,10 +47,9 @@ minrate: 1
 maxrate: 5
 ratestep: 0.1
 
-per_pagess:
-  users: 5
 per_page:
+  users: 5
   suggest: 5
   product: 10
   order: 5
-min_product: 1
+  min_product: 1

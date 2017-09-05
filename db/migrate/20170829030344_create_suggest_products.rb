@@ -8,6 +8,7 @@ class CreateSuggestProducts < ActiveRecord::Migration[5.1]
       t.text :description
       t.decimal :price, default: 0
       t.integer :status, default: Settings.default.suggest_product.waiting
+      t.integer :catalog_id
 
       t.timestamps
     end
