@@ -1,4 +1,5 @@
 class Admin::SuggestProductsController < ApplicationController
+  include SuggestProductsHelper
   layout "admin/admin_layout"
   before_action :load_suggest_product, only: [:edit, :update, :destroy]
   def index

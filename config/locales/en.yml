@@ -101,3 +101,23 @@ en:
     update_your_profile: "Update your profile"
     edit_user: "Edit user"
     save_changes: "Save changes"
+  suggest_products:
+    new:
+      title: "Create new suggest product"
+      waiting: "Waiting"
+      finished: "Finished"
+      apply: "Apply"
+      image: "Image"
+      name: "Name"
+      description: "Description"
+      price: "Price"
+      user_name: "Username"
+      status: "Status"
+      catalog: "Catalog"
+    update:
+      success: "Update Success"
+      failed: "Update failed"
+    create:
+      success: "Success"
+      failed: "Failed"
+

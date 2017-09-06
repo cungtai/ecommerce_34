@@ -9,6 +9,7 @@ class RegistersController < ApplicationController
     if @user.save
       flash[:success] = t "messages.register.success"
       log_in @user
+      redirect_to root_path
     else
       flash[:danger] = t "messages.register.failed"
       render :new

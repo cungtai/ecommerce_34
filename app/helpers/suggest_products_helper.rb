@@ -23,4 +23,8 @@ module SuggestProductsHelper
     current_page = params[:page].nil? ? 0 : params[:page].to_i - 1
     current_page * Settings.per_page.order + index + 1
   end
+
+  def all_catalogs
+    Catalog.all.map{|cat| [cat.name,cat.id]}
+  end
 end
