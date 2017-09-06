@@ -3,7 +3,7 @@ class CreateSuggestProducts < ActiveRecord::Migration[5.1]
     create_table :suggest_products do |t|
       t.references :user, foreign_key: true
       t.references :product, foreign_key: true
-      t.string :image
+      t.string :image, null: true
       t.string :name
       t.text :description
       t.decimal :price, default: 0

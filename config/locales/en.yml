@@ -65,6 +65,26 @@ en:
       static_pages: "Static Pages"
       all_static_pages: "All Static Pages"
       add_static_pages: "Add Static Page"
+    suggest_products:
+      index:
+        title: "Show List Suggest Products"
+      edit:
+        title: "Update"
+        waiting: "Waiting"
+        finished: "Finished"
+        save_change: "Save Change"
+        image: "Image"
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        user_name: "Username"
+        status: "Status"
+      update:
+        success: "Update Success"
+        failed: "Update failed"
+      delete:
+        success: "Delete success"
+        failed: "Delete failed"
   messages:
     register:
       success: "Success register"

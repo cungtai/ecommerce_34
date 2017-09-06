@@ -54,3 +54,8 @@ per_page:
   product: 10
   order: 5
   min_product: 1
+suggest_products:
+  image:
+    size: 64
+    width: 64
+    heigh: 64
