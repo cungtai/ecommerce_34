@@ -12,6 +12,7 @@ minimum:
   password: 6
   email: 6
   content: 50
+  avarta: 50
 default:
   static_page:
     about: "pages/about"

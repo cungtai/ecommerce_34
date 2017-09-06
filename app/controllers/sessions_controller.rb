@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user
     else
-      flash[:danger] = t ("messages.users.invalid_email_or_password")
+      flash[:danger] = t "messages.users.invalid_email_or_password"
       render :new
     end
   end

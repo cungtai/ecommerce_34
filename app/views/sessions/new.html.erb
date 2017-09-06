@@ -1,17 +1,5 @@
 <% provide :title, t("sigin") %>
 <h1<%= t "sigin" %></h1>
-<<<<<<< 2ad5f0b797871a2166bf19858d0efd3d9d1ab843
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
-      <%= f.submit t("pages.sigin"), class: "btn btn-primary" %>
-    <% end %>
-=======
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
@@ -24,8 +12,6 @@
 
       <%= f.submit t("pages.sigin"), class: "btn btn-primary" %>
     <% end %>
-
->>>>>>> Finish Update Profile
     <p><%= t("users.new_user") %>? <%= link_to t("pages.sign_up_now"), signup_path %></p>
   </div>
 </div>
