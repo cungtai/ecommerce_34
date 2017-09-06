@@ -35,6 +35,16 @@ default:
   suggest_product:
     processed: 0
     waiting: 1
+  product:
+    image_empty: "empty_avatar.png"
+    zero_price: 0
+    filter_type:
+      sort_desc_prices: "sort_desc_prices"
+      sort_asc_prices: "sort_asc_prices"
+      sort_desc_quantity: "sort_desc_quantity"
+      sort_asc_quantity: "sort_asc_quantity"
+      sort_desc_names: "sort_desc_names"
+      sort_asc_names: "sort_asc_names"
   top_new_products: 12
   top_order_products: 12
   number_of_order: 0

@@ -1,0 +1,28 @@
+<% provide :title, t("pages.title") %>
+<div class="container">
+  <%= render "shared/filter" %>
+  <div class="row">
+  <% @products.each do |product|%>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><%= product.name %></div>
+        <div class="panel-body center"><%= link_to image_tag(product.main_image), product %></div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-4">
+              <span class="label-product-title"><%= t ".price" %></span>
+              <span class="label-price"><%= product.current_price %></span>
+            </div>
+            <div class="col-md-6 pull-right">
+              <%= link_to t(".view_detail"), product, class: "btn-success form-control center" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="row">
+    <%= will_paginate @products%>
+  </div>
+</div>

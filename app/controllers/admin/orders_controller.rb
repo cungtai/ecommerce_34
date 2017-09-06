@@ -1,5 +1,4 @@
-class Admin::OrdersController < ApplicationController
-  layout "layouts/admin/admin_layout"
+class Admin::OrdersController < BaseAdminController
   before_action :load_order, except: [:index, :create]
   def index
     @orders = Order.by_receiver_name(params[:search]).paginate page: params[:page],
