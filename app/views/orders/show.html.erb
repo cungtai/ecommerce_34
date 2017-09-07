@@ -1,0 +1,69 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <h1><%= t ".title" %> </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%=  t ".receiver_name" %>
+    </div>
+    <div class="col-md-3">
+      <%=  @order.receiver_name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%=  t ".receiver_email" %>
+    </div>
+    <div class="col-md-3">
+      <%=  @order.receiver_email %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%=  t ".receiver_phone" %>
+    </div>
+    <div class="col-md-3">
+      <%=  @order.receiver_phone %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <%=  t ".amount" %>
+    </div>
+    <div class="col-md-3">
+      <%=  @order.amount %>
+    </div>
+  </div>
+
+  <div id="order-items">
+    <div class="row">
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".qty" %></th>
+            <th><%= t ".amount" %></th>
+            <th><%= t ".status" %></th>
+          </tr>
+        </thead>
+        <tbody>
+      <% @order.order_details.each_with_index do |order_detail, index|%>
+        <tr class="<%= set_order_detail_style order_detail %>" >
+            <td scope="row"><%= (index + 1).to_s %></td>
+            <td><%= order_detail.product.name %></td>
+            <td><%= order_detail.qty %></td>
+            <td><%= order_detail.amount %></td>
+            <td><%= show_order_detail_status order_detail %></td>
+        </tr>
+      <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>

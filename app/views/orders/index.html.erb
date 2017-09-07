@@ -1,0 +1,41 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <div class="row">
+    <h1><%= t ".title" %></h1>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>#</th>
+          <th><%= t ".receiver_name" %></th>
+          <th><%= t ".receiver_email" %></th>
+          <th><%= t ".receiver_phone" %></th>
+          <th><%= t ".amount" %></th>
+          <th><%= t ".status" %></th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+    <% @orders.each_with_index do |order, index|%>
+      <tr class="<%= set_class order %>" >
+          <th scope="row"><%= (index + 1).to_s %></th>
+          <th><%= order.receiver_name %></th>
+          <th><%= order.receiver_email %></th>
+          <th><%= order.receiver_phone %></th>
+          <th><%= order.amount %></th>
+          <th><%= show_status order %></th>
+          <th>
+            <%= link_to order_path(order.id) do %>
+              <strong class="glyphicon glyphicon-list-alt"></strong>
+            <% end %>
+          </th>
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <%= will_paginate @users%>
+  </div>
+</div>
