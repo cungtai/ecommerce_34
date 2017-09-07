@@ -2,7 +2,6 @@ en:
   default:
     search: "Search"
     you_sure: "Are you sure to delete this item?"
-  site_name: "Truong tin"
   pages:
     company_name: "Truong Tin Limited Company"
     title: "Truong Tin Co.,Ltd"
@@ -40,11 +39,48 @@ en:
         email: "Email"
         address: "Address"
         phone: "Phone"
+    catalogs:
+      index:
+        title: "All Catalogs"
+        catalog_not_found: "The catalog is not found!"
+      update:
+        update_success: "The catalog is updated successfully!"
+        update_fail: "Fail to update this catalog!"
+        title: "Update Catalog"
+        save_change: "Save Change"
+      delete:
+        delete_success: "The catalog is deleted successfully!"
+        delete_fail: "Fail to delete this catalog!"
+      create:
+        create_success: "The catalog is created successfully!"
+        create_fail: "Fail to create the catalog!"
+        title: "Create Catalog"
+        create_button: "Create New"
     orders:
       title: "Products"
       status_waiting: "Waiting"
       status_finished: "Finished"
       save_change: "Save Change"
+    show_catalogs:
+      title: "All Catalogs"
+      user_deleted: "The catalog is deleted!"
+      user_not_found: "The catalog is not found!"
+    create_catalog:
+      title: "Create new a catalog"
+      create_catalog_success: "The catalog is created successfully!"
+      create_catalog_fail: "Fail to create catalog!"
+      create_button: "Create New"
+    update_catalog:
+      title: "Update Catalog"
+      save_change: "Save"
+      update_success: "The catalog is updated successfully!"
+      update_fail: "Fail to update catalog!"
+    products:
+      index:
+        title: "All Products"
+        product_name: "Product Name"
+        image: "Image"
+        price: "Price"
     menu:
       dashboard: "Dashboard"
       users: "Users"

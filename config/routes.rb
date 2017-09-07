@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :orders
-    resources :suggest_products
+    resources :catalogs
   end
 end

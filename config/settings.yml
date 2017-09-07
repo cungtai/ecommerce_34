@@ -54,6 +54,7 @@ per_page:
   product: 10
   order: 5
   min_product: 1
+  catalog: 5
 suggest_products:
   image:
     size: 64

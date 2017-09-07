@@ -40,6 +40,23 @@ vi:
         email: "Email"
         address: "Địa chỉ"
         phone: "Điện thoại"
+    catalogs:
+      index:
+        title: "Danh mục sản phẩm"
+        catalog_not_found: "Không tìm thấy danh mục này!"
+      update:
+        update_success: "Cập nhật danh mục thành công!"
+        update_fail: "Có lỗi xảy ra khi cập nhật danh mục!"
+        title: "Cập nhật danh mục"
+        save_change: "Lưu lại"
+      delete:
+        delete_success: "Xoá danh mục này thành công!"
+        delete_fail: "Có lỗi xảy ra khi xoá danh mục này!"
+      create:
+        create_success: "Tạo danh mục thành công!"
+        create_fail: "Có lỗi xảy ra khi tạo danh mục!"
+        title: "Thêm mới danh mục"
+        create_button: "Thêm mới"
     orders:
       title: "Products"
       status_waiting: "Đang chờ"
