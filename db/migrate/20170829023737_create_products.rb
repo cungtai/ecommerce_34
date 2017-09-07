@@ -6,7 +6,9 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :name
       t.text :content
       t.integer :qty
-      t.integer :viewed
+      t.decimal :current_price, default: 0
+      t.datetime :expired_date
+      t.integer :viewed, default: 0
       t.string :tag
 
       t.timestamps

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   resources :users
   resources :suggest_products
+  resources :products
   namespace :admin do
     resources :users
     resources :orders

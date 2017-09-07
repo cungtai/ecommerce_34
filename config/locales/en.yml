@@ -156,4 +156,15 @@ en:
     create:
       success: "Success"
       failed: "Failed"
-
+  products:
+    show:
+      title: "Product information"
+      not_found: "Not found"
+    index:
+      title: "All products"
+      add_to_cart: "Add to cart"
+      view_detail: "View detail"
+      price: "Price: "
+  sort_desc: "desc"
+  sort_asc: "asc"
+  submit: "Submit"

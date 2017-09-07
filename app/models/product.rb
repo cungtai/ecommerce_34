@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  mount_uploader :image, ProductImageUploader
   belongs_to :user
   belongs_to :catalog
   has_many :order_details, dependent: :destroy
@@ -8,7 +9,16 @@ class Product < ApplicationRecord
   has_many :recently_vieweds, dependent: :destroy
 
   validates :name,  presence: true, length: {maximum: Settings.maximum.name}
-  validates :price, presence: true, numericality: true
-  validates :quantity, presence: true, numericality: {only_integer: true}
+  validates :qty, presence: true, numericality: {only_integer: true}
   validates :catalog_id, presence: true
+
+  scope :sort_price, -> type {order current_price: type if type.present?}
+  scope :sort_name, -> type {order name: type if type.present?}
+  scope :sort_qty, -> type {order qty: type if type.present?}
+
+  def main_image
+    return if images.where("is_primary", true).first
+    Settings.default.product.image_empty
+  end
+
 end

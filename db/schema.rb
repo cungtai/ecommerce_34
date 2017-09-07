@@ -97,9 +97,9 @@ ActiveRecord::Schema.define(version: 20170829090731) do
   create_table "price_products", force: :cascade do |t|
     t.integer "product_id"
     t.integer "user_id"
-    t.decimal "price"
+    t.decimal "price", default: "0.0"
     t.datetime "from_date"
-    t.datetime "to_date"
+    t.datetime "expired_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_price_products_on_product_id"
@@ -112,7 +112,9 @@ ActiveRecord::Schema.define(version: 20170829090731) do
     t.string "name"
     t.text "content"
     t.integer "qty"
-    t.integer "viewed"
+    t.decimal "current_price", default: "0.0"
+    t.datetime "expired_date"
+    t.integer "viewed", default: 0
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
