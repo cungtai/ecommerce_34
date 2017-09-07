@@ -168,3 +168,12 @@ en:
   sort_desc: "desc"
   sort_asc: "asc"
   submit: "Submit"
+  orders:
+    index:
+      title: "Your history orders"
+    show:
+      title: "Order information"
+  order_details:
+    ready: "Ready"
+    not_ready: "Not ready"
+    not_found: "Not found"

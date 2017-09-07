@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users
   resources :suggest_products
   resources :products
+  resources :orders
   namespace :admin do
     resources :users
     resources :orders
