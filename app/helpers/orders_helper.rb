@@ -11,4 +11,8 @@ module OrdersHelper
     style_class = "success" if order.finished?
     style_class
   end
+
+  def all_payments
+    Payment.all.map{|p| [p.name,p.id]}
+  end
 end

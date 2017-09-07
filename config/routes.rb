@@ -21,11 +21,16 @@ Rails.application.routes.draw do
   resources :orders
   resources :catalogs
   resources :ratings
+  resources :order_details
+  resources :carts
+  resources :items
+
   namespace :admin do
     resources :users
     resources :orders
     resources :suggest_products
     resources :catalogs
+
     resources :products do
       collection do
         post :import

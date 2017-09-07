@@ -7,4 +7,7 @@ module SessionsHelper
     return true
   end
 
+  def clear_cart
+    session.delete :cart
+  end
 end

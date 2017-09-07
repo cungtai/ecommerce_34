@@ -1,0 +1,8 @@
+<div class="shopping-cart">
+  <div id="cart-items"><%= render "shopping_cart" %></div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to "Check out", carts_path, method: :post, class: "btn btn-primary form-control" %>
+    </div>
+  </div>
+</div>

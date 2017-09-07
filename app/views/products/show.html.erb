@@ -11,7 +11,7 @@
           <span class="label-price"><%= @product.current_price %></span>
         </div>
         <div class="col-md-6 pull-right">
-          <%= link_to t(".add_to_cart"), @product, class: "btn-success form-control center" %>
+          <%= link_to t(".add_to_cart"), new_order_detail_path(product_id: @product.id), class: "btn-success form-control center" %>
         </div>
       </div>
     </div>

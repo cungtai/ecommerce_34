@@ -10,11 +10,11 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#"><%= t("pages.home") %></a></li>
-        <li><a href="#"><%= t("pages.products") %></a></li>
-        <li><a href="#"><%= t("pages.accessories") %></a></li>
-        <li><a href="#"><%= t("pages.ship_cod") %></a></li>
-        <li><a href="#"><%= t("pages.why_us") %></a></li>
-        <li><a href="#"><%= t("pages.contact") %></a></li>
+        <li><%= link_to t("pages.products"), products_path %></li>
+        <li><%= link_to t("pages.accessories"), "#" %></a></li>
+        <li><%= link_to t("pages.ship_cod"), "#" %></a></li>
+        <li><%= link_to t("pages.why_us"), "#" %></a></li>
+        <li><%= link_to t("pages.contact"), "#" %></a></li>
       </ul>
       <nav>
       <ul class="nav navbar-nav navbar-right">

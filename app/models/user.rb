@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
   has_many :recently_vieweds, dependent: :destroy
   has_many :static_pages, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -19,7 +20,11 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: Settings.maximum.email},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true,
-    length: {minimum: Settings.minimum.password, maximum: Settings.maximum.password}, allow_nil: true
+    length: {minimum: Settings.minimum.password, maximum: Settings.maximum.password},
+    allow_nil: true
+
+  enum role: {admin: Settings.default.role.admin, editor: Settings.default.role.editor,
+    user: Settings.default.role.user}
 
   before_save {email.downcase!}
 

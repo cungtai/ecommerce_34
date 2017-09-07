@@ -13,5 +13,14 @@ class ApplicationController < ActionController::Base
     else
       "application"
     end
+
+  before_action :create_cart
+
+  def create_cart
+    @cart = Cart.build_from_hash session[:cart]
+  end
+
+  def update_cart
+    session[:cart] = @cart
   end
 end

@@ -234,7 +234,30 @@ en:
       title: "Your history orders"
     show:
       title: "Order information"
+    edit:
+      title: "Check out"
+      payment: "Payment"
+      order_items: "Order Items"
+      empty_carts: "Cart Empty. You can not checkout!!!"
+    update:
+      success: "Check out success"
+      failed: "Check out failed"
   order_details:
     ready: "Ready"
     not_ready: "Not ready"
     not_found: "Not found"
+    create:
+      success: "Success add products to cart"
+      failed: "Failed"
+  carts:
+    show:
+      total_order: "Total order"
+      prefix-empty-carts: "There are no items in your shopping cart.  Please "
+      sufix-empty-carts: "and add some items to your cart."
+      total_price: "Total price"
+      unit_price: "Unit price"
+      delete: "Delete"
+      update_quantity: "Update Quantity"
+      sure_delete: "Are you sure you wish to delete the product"
+  login_to_continue: "Opp!!! Login to continue"
+  not_permision: "You have not permision to access admin page"

@@ -1,0 +1,31 @@
+<% provide :title, t("signup") %>
+<h1><%= t "signup" %></h1>
+<div class="container">
+<%= form_for @order_detail do |f| %>
+<%= f.hidden_field :product_id, value: @product.id %>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th><%= t ".product" %></th>
+      <th><%= t ".quantity" %></th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th>
+            <%= image_tag @product.image, size: 32 %>
+            <%= @product.name %>
+            <%= @product.content %>
+          </th>
+          <th>
+            <%= f.number_field :qty, value: 1, class: "form-control", min: 1 %>
+          </th>
+          <th>
+            <%= f.submit t("submit"), class: "btn btn-primary" %>
+          </th>
+      </tr>
+  </tbody>
+</table>
+<% end %>
+</div>
