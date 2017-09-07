@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :suggest_products, dependent: :destroy
   has_many :ratings, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: Settings.maximum.name}
 

@@ -56,29 +56,9 @@ en:
         create_fail: "Fail to create the catalog!"
         title: "Create Catalog"
         create_button: "Create New"
-    orders:
-      title: "Products"
-      status_waiting: "Waiting"
-      status_finished: "Finished"
-      save_change: "Save Change"
-    show_catalogs:
-      title: "All Catalogs"
-      user_deleted: "The catalog is deleted!"
-      user_not_found: "The catalog is not found!"
-    create_catalog:
-      title: "Create new a catalog"
-      create_catalog_success: "The catalog is created successfully!"
-      create_catalog_fail: "Fail to create catalog!"
-      create_button: "Create New"
-    update_catalog:
-      title: "Update Catalog"
-      save_change: "Save"
-      update_success: "The catalog is updated successfully!"
-      update_fail: "Fail to update catalog!"
     products:
       default:
         product_not_found: "The product is not found!"
-        link_file_download: "Download sample file"
       index:
         title: "All Products"
         product_name: "Product Name"
@@ -104,6 +84,31 @@ en:
         title: "Import products from file"
         import_button: "Import"
         import_success: "Import successfully!"
+    orders:
+      title: "Products"
+      status_waiting: "Waiting"
+      status_finished: "Finished"
+      save_change: "Save Change"
+    show_catalogs:
+      title: "All Catalogs"
+      user_deleted: "The catalog is deleted!"
+      user_not_found: "The catalog is not found!"
+    create_catalog:
+      title: "Create new a catalog"
+      create_catalog_success: "The catalog is created successfully!"
+      create_catalog_fail: "Fail to create catalog!"
+      create_button: "Create New"
+    update_catalog:
+      title: "Update Catalog"
+      save_change: "Save"
+      update_success: "The catalog is updated successfully!"
+      update_fail: "Fail to update catalog!"
+    products:
+      index:
+        title: "All Products"
+        product_name: "Product Name"
+        image: "Image"
+        price: "Price"
     menu:
       dashboard: "Dashboard"
       users: "Users"
@@ -160,43 +165,3 @@ en:
     update_your_profile: "Update your profile"
     edit_user: "Edit user"
     save_changes: "Save changes"
-  suggest_products:
-    new:
-      title: "Create new suggest product"
-      waiting: "Waiting"
-      finished: "Finished"
-      apply: "Apply"
-      image: "Image"
-      name: "Name"
-      description: "Description"
-      price: "Price"
-      user_name: "Username"
-      status: "Status"
-      catalog: "Catalog"
-    update:
-      success: "Update Success"
-      failed: "Update failed"
-    create:
-      success: "Success"
-      failed: "Failed"
-  products:
-    show:
-      title: "Product information"
-      not_found: "Not found"
-    index:
-      title: "All products"
-      add_to_cart: "Add to cart"
-      view_detail: "View detail"
-      price: "Price: "
-  sort_desc: "desc"
-  sort_asc: "asc"
-  submit: "Submit"
-  orders:
-    index:
-      title: "Your history orders"
-    show:
-      title: "Order information"
-  order_details:
-    ready: "Ready"
-    not_ready: "Not ready"
-    not_found: "Not found"
