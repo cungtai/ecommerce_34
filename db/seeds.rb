@@ -80,3 +80,9 @@ end
   PriceProduct.create!(user_id: user_id, product_id: product_id, price: price,
     from_date: from_date, expired_date: expired_date)
 end
+
+5.times do |n|
+  user_id = rand(1..5)
+  product_id = rand(1..3)
+  RecentlyViewed.create!(user_id: user_id, product_id: product_id)
+end

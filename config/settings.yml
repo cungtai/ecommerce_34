@@ -48,16 +48,17 @@ default:
     row_header: 1
     image_size: 64
     empty_image: "empty_avatar.png"
-  top_new_products: 12
-  top_order_products: 12
-  number_of_order: 0
-  recently: 12
-  same_category: 10
-  round: 1
-  min_product: 0
-  quantity_cart_item: 1
-  link_file_import_products: "/shared/import_products_template.xlsx"
-
+    recently: 12
+    link_file_import_products: "/shared/import_products_template.xlsx"
+    number_of_order: 0
+    number_of_view: 0
+    top_new_products: 8
+    top_order_products: 8
+    recently_view_products: 8
+    same_category: 10
+    round: 1
+    min_product: 0
+    quantity_cart_item: 1
 minrate: 1
 maxrate: 5
 ratestep: 0.1
