@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  mount_uploader :image, ProductImageUploader
+
   belongs_to :user
   belongs_to :catalog
   has_many :order_details, dependent: :destroy
@@ -8,6 +8,9 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   has_many :recently_vieweds, dependent: :destroy
   has_many :ratings, dependent: :destroy
+
+  accepts_nested_attributes_for :images, allow_destroy: true
+
 
   validates :name,  presence: true, length: {maximum: Settings.maximum.name}
   validates :qty, presence: true, numericality: {only_integer: true}
@@ -35,7 +38,8 @@ class Product < ApplicationRecord
   scope :top_order_products, -> {order "number_of_order desc"}
 
   def primary_image
-    return if images.where("is_primary", true).first
+    image = images.where("is_primary", true)
+    return image.first.url if image.present?
     Settings.default.product.empty_image
   end
 

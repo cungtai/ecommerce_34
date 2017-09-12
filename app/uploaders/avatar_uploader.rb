@@ -1,8 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   permissions 0777
-  include CarrierWave::MiniMagick
-  process resize_to_limit: [400, 400]
-
   storage :file
 
   include CarrierWave::MiniMagick
