@@ -55,7 +55,7 @@ end
     description: description, image: avatar, price: price)
 end
 
-100.times do |n|
+10.times do |n|
   user_id = rand(1..10)
   catalog_id  = rand(1..3)
   name = "MSI-#{n+1} computer"
