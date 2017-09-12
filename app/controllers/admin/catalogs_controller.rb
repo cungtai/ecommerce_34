@@ -1,5 +1,6 @@
 class Admin::CatalogsController < BaseAdminController
-  before_action :load_catalog, except: [:create, :new, :index]
+  before_action :authenticate_user!, :is_admin!, :load_catalog,
+    except: [:create, :new, :index]
 
   def index
     @catalogs = Catalog.by_name(params[:search]).order_catalogs.paginate(page: params[:page],

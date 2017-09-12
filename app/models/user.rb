@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   # mount_uploader :avatar, AvatarUploader
   has_many :recently_vieweds, dependent: :destroy
   has_many :static_pages, dependent: :destroy
@@ -18,7 +22,6 @@ class User < ApplicationRecord
     length: {minimum: Settings.minimum.password, maximum: Settings.maximum.password}, allow_nil: true
 
   before_save {email.downcase!}
-  has_secure_password
 
   scope :by_name, ->name do
     where "name LIKE ?", "%#{name}%" if name.present?

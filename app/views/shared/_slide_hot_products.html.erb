@@ -10,7 +10,8 @@
       <div class="item active">
         <%= image_tag "cart.png", alt: t("product.image") %>
       </div>
-      <% @top_order_products.each do |product| %>
+      <% @top_order_products.take(Settings.default.product.top_order_products)
+        .each do |product| %>
         <div class="item">
           <div class="single-product-slide" >
             <div class="product-f-image">

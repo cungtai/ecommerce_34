@@ -1,19 +1,34 @@
 class SessionsController < ApplicationController
-  layout "user/user_layout"
+  layout "layouts/user/user_layout"
+
+  def new
+      get_pre_login_url
+      super
+  end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      redirect_to user
-    else
-      flash[:danger] = t "messages.users.invalid_email_or_password"
-      render :new
-    end
+    @referer_url = root_path
+    super
   end
 
   def destroy
-    logout
-    redirect_to root_path
+    @referer_url = root_path
+    super
   end
+
+  private
+  def get_pre_login_url
+    @referer_url = root_path
+  end
+
+  def after_sign_in_path_for resource
+    sign_in_url = url_for(action: "new", controller: "sessions",
+      only_path: false, protocol: "http")
+    if @referer_url == sign_in_url
+      super
+    else
+      @referer_url || root_path
+    end
+  end
+
 end

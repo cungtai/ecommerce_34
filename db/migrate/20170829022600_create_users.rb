@@ -6,10 +6,10 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :avatar, null: true
       t.string :phone, null: true
       t.string :address, null: true
-      t.string :password_digest
+      # t.string :password_digest
       t.integer :role, default: Settings.default.role.user
-      t.string :activate_token
-      t.string :remember_token
+      t.string :activate_token, null: true
+      t.string :remember_token, null: true
       t.boolean :is_activated, default: Settings.default.user.not_activated
 
       t.timestamps
