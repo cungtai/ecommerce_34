@@ -7,7 +7,7 @@ class Admin::CatalogsController < BaseAdminController
   def index
     @search = Catalog.search(params[:q])
     @catalogs = @search.result.paginate page: params[:page],
-      per_page: Settings.per_page.catalog
+      per_page: Settings.per_page.num_row_per_page
   end
 
   def show

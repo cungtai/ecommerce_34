@@ -67,8 +67,25 @@ en:
         create_fail: "Fail to create the catalog!"
         title: "Create Catalog"
         create_button: "Create New"
+    staticpages:
+      index:
+        title: "All Static Pages"
+        staticpage_not_found: "The static page is not found!"
+      update:
+        update_success: "The static page is updated successfully!"
+        update_fail: "Fail to update this static page!"
+        title: "Update Static Page"
+        save_change: "Save Change"
+      delete:
+        delete_success: "The static page is deleted successfully!"
+        delete_fail: "Fail to delete this static page!"
+      create:
+        create_success: "The static page is created successfully!"
+        create_fail: "Fail to create the static page!"
+        title: "Create static page"
+        create_button: "Create New"
     orders:
-      title: "Products"
+      title: "Orders"
       status_waiting: "Waiting"
       status_finished: "Finished"
       save_change: "Save Change"

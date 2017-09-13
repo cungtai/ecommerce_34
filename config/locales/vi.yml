@@ -60,6 +60,23 @@ vi:
         create_fail: "Có lỗi xảy ra khi tạo danh mục!"
         title: "Thêm mới danh mục"
         create_button: "Thêm mới"
+    staticpages:
+      index:
+        title: "Danh mục các trang tĩnh"
+        staticpage_not_found: "Không tìm thấy trang!"
+      update:
+        update_success: "Cập nhật thành công!"
+        update_fail: "Có lỗi xảy ra!"
+        title: "Cập nhật thông tin trang tĩnh"
+        save_change: "Lưu lại"
+      delete:
+        delete_success: "Đã xoá thành công!"
+        delete_fail: "Có lỗi xảy ra!"
+      create:
+        create_success: "Tạo trang thành công!"
+        create_fail: "Có lỗi khi tạo trang!"
+        title: "Tạo trang thông tin tĩnh"
+        create_button: "Tạo mới"
     products:
       default:
         product_not_found: "The product is not found!"
