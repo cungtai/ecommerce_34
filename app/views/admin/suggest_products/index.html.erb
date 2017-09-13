@@ -18,7 +18,7 @@
     </thead>
     <tbody>
       <% @suggest_products.each_with_index do |suggest_product, index|%>
-      <tr class="<%= set_class suggest_product %>" >
+        <tr class="<%= set_class suggest_product %>" >
           <td scope="row"><%= show_index index %></td>
           <td><%= image_tag suggest_product.image, size: Settings.suggest_products.image.size,
             alt: suggest_product.name, class: "gravatar" %></td>
@@ -39,9 +39,8 @@
                 <strong class="glyphicon glyphicon-trash"></strong>
             <% end %>
           </td>
-      </tr>
+        </tr>
       <% end %>
     </tbody>
   </table>
-  <%= will_paginate @suggest_products%>
 </div>
