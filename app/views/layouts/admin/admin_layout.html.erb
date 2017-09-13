@@ -11,7 +11,7 @@
   <body>
   <div class="container-fluid">
       <!-- Example row of columns -->
-      <div class="row-fluid">
+      <div class="row">
         <div class="col-md-3">
           <div class="col-md-3"><%= render "layouts/admin/slide_left" %></div>
         </div>
@@ -20,7 +20,6 @@
               <%= render "layouts/admin/header" %>
           </div>
           <div class="row">
-            <div class="col-md-9">
             <div class="col-md-12">
               <% flash.each do |message_type, message| %>
                 <div class="alert alert-<%= message_type %>">
@@ -31,7 +30,6 @@
             <div class="col-md-12">
               <%= yield %>
             </div>
-          </div>
           </div>
         </div>
       </div>

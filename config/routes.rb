@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :suggest_products
     resources :catalogs
+    resources :static_pages
 
     resources :products do
       collection do

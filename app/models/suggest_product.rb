@@ -9,4 +9,6 @@ class SuggestProduct < ApplicationRecord
   validates :name,  presence: true, length: {maximum: Settings.maximum.name}
   validates :price, presence: true, numericality: true
   validates :user_id, presence: true
+
+  scope :waiting_products, -> {where "status = ?", Settings.default.order.waiting}
 end

@@ -1,44 +1,47 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
-<table class="table">
-  <thead class="thead-inverse">
-    <tr>
-      <th>#</th>
-      <th><%= t ".image" %></th>
-      <th><%= t ".name" %></th>
-      <th><%= t ".description" %></th>
-      <th><%= t ".price" %></th>
-      <th><%= t ".catalog_name" %></th>
-      <th><%= t ".user_name" %></th>
-      <th><%= t ".status" %></th>
-      <th>#</th>
-      <th>#</th>
-    </tr>
-  </thead>
-  <tbody>
-<% @suggest_products.each_with_index do |suggest_product, index|%>
-  <tr class="<%= set_class suggest_product %>" >
-      <td scope="row"><%= show_index index %></td>
-      <td><%= image_tag suggest_product.image, size: Settings.suggest_products.image.size, alt: suggest_product.name, class: "gravatar" %></td>
-      <td><%= suggest_product.name %></td>
-      <td><%= suggest_product.description %></td>
-      <td><%= suggest_product.price %></td>
-      <td><%= suggest_product.catalog.name %></td>
-      <td><%= suggest_product.user.name %></td>
-      <td><%= show_status suggest_product %></td>
-      <td>
-        <%= link_to edit_admin_suggest_product_path(suggest_product.id) do %>
-          <strong class="glyphicon glyphicon-pencil"></strong>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to [:admin, suggest_product], method: :delete,
-          data: {confirm:t("default.you_sure")} do %>
-            <strong class="glyphicon glyphicon-trash"></strong>
-        <% end %>
-      </td>
-  </tr>
-<% end %>
-</tbody>
-</table>
-<%= will_paginate @users%>
+<div class="container">
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th><%= t ".image" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".description" %></th>
+        <th><%= t ".price" %></th>
+        <th><%= t ".catalog_name" %></th>
+        <th><%= t ".user_name" %></th>
+        <th><%= t ".status" %></th>
+        <th>#</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @suggest_products.each_with_index do |suggest_product, index|%>
+      <tr class="<%= set_class suggest_product %>" >
+          <td scope="row"><%= show_index index %></td>
+          <td><%= image_tag suggest_product.image, size: Settings.suggest_products.image.size,
+            alt: suggest_product.name, class: "gravatar" %></td>
+          <td><%= suggest_product.name %></td>
+          <td><%= suggest_product.description %></td>
+          <td><%= suggest_product.price %></td>
+          <td><%= suggest_product.catalog.name %></td>
+          <td><%= suggest_product.user.name %></td>
+          <td><%= show_status suggest_product %></td>
+          <td>
+            <%= link_to edit_admin_suggest_product_path(suggest_product.id) do %>
+              <strong class="glyphicon glyphicon-pencil"></strong>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to [:admin, suggest_product], method: :delete,
+              data: {confirm:t("default.you_sure")} do %>
+                <strong class="glyphicon glyphicon-trash"></strong>
+            <% end %>
+          </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @suggest_products%>
+</div>

@@ -13,9 +13,11 @@
   <body>
   <div id="fb-root"></div>
     <div class="container text-center">
-      <div>
+      <div class="col-md-3">
         <%= link_to image_tag("TruongTin_Logo.png", alt: t("alt.logo"),
           class: "img-responsive logo"), root_path %>
+      </div>
+      <div class="col-md-9>">
         <h1><%= t "pages.company_name" %></h1>
       </div>
       <div><p><%= t "pages.sologan" %></p></div>

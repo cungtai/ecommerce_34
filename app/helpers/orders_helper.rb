@@ -1,10 +1,12 @@
 module OrdersHelper
+
   def show_status order
     st = t "orders.not_found"
     st = t "orders.waiting" if order.waiting?
     st = t "orders.finished" if order.finished?
     st
   end
+
   def set_class order
     style_class = "danger"
     style_class = "warning" if order.waiting?
@@ -12,7 +14,8 @@ module OrdersHelper
     style_class
   end
 
-  def all_payments
-    Payment.all.map{|p| [p.name,p.id]}
+  def show_index index
+    current_page = params[:page].nil? ? 0 : params[:page].to_i - 1
+    current_page * Settings.per_page.order + index + 1
   end
 end

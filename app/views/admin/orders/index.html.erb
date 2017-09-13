@@ -1,46 +1,52 @@
 <% provide :title, t("admin.orders.title") %>
 <h1><%= t "admin.pages.show_orders.title" %></h1>
-<%= form_tag admin_orders_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag t("default.search"), name: nil %>
-  </p>
-<% end %>
-<table class="table">
-  <thead class="thead-inverse">
-    <tr>
-      <th>#</th>
-      <th><%= t "orders.receiver_name" %></th>
-      <th><%= t "orders.receiver_email" %></th>
-      <th><%= t "orders.receiver_phone" %></th>
-      <th><%= t "orders.amount" %></th>
-      <th><%= t "orders.status" %></th>
-      <th>#</th>
-      <th>#</th>
-    </tr>
-  </thead>
-  <tbody>
-<% @orders.each_with_index do |order, index|%>
-  <tr class="<%= set_class order %>" >
-      <th scope="row"><%= (index + 1).to_s %></th>
-      <th><%= order.receiver_name %></th>
-      <th><%= order.receiver_email %></th>
-      <th><%= order.receiver_phone %></th>
-      <th><%= order.amount %></th>
-      <th><%= show_status order %></th>
-      <th>
-        <%= link_to edit_admin_order_path(order.id) do %>
-          <strong class="glyphicon glyphicon-pencil"></strong>
-        <% end %>
-      </th>
-      <th>
-        <%= link_to [:admin, order], method: :delete,
-          data: {confirm:t("default.you_sure")} do %>
-            <strong class="glyphicon glyphicon-trash"></strong>
-        <% end %>
-      </th>
-  </tr>
-<% end %>
-</tbody>
-</table>
-<%= will_paginate @users%>
+<div class="container-fluid">
+  <%= form_tag admin_orders_path, method: :get do %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= text_field_tag :search, params[:search], {class: "form-control"} %>
+      </div>
+      <div class="col-md-2">
+        <%= submit_tag t("default.search"), {class: "form-control btn-primary"} %>
+      </div>
+    </div>
+  <% end %>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th><%= t "orders.receiver_name" %></th>
+        <th><%= t "orders.receiver_email" %></th>
+        <th><%= t "orders.receiver_phone" %></th>
+        <th><%= t "orders.amount" %></th>
+        <th><%= t "orders.status" %></th>
+        <th>#</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each_with_index do |order, index|%>
+        <tr class="<%= set_class order %>" >
+          <td scope="row"><%= show_index_p index %></td>
+          <td><%= order.receiver_name %></td>
+          <td><%= order.receiver_email %></td>
+          <td><%= order.receiver_phone %></td>
+          <td><%= order.amount %></td>
+          <td><%= show_status order %></td>
+          <td>
+            <%= link_to edit_admin_order_path(order.id) do %>
+              <strong class="glyphicon glyphicon-pencil"></strong>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to [:admin, order], method: :delete,
+              data: {confirm:t("default.you_sure")} do %>
+                <strong class="glyphicon glyphicon-trash"></strong>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @orders%>
+</div>

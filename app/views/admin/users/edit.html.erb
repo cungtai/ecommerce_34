@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user do |f| %>
+    <%= form_for [:admin,@user] do |f| %>
       <%= render "shared/error_messages" %>
 
       <%= f.label :name %>
@@ -18,11 +18,17 @@
       <%= f.label :address %>
       <%= f.text_field :address, class: "form-control" %>
 
+      <br/>
       <div class="gravatar_edit">
         <%= image_tag @user.avatar %>
       </div>
+      <br/>
+
       <%= f.label :avatar %>
       <%= f.file_field :avatar, class: "form-control" %>
+      <br/>
+      <%= f.select :role, user_roles, {selected: @user.role},
+        {class: "form-control"} %>
       <br/>
       <%= f.submit t("users.save_changes"), class: "btn btn-primary" %>
     <% end %>
