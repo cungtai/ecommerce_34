@@ -1,12 +1,13 @@
 <% provide :title, t(".title") %>
 <div class="container">
-  <%= render "shared/filter" %>
+  <%= render "shared/filter_cat" %>
   <div class="row">
   <% @products.each do |product|%>
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading"><%= product.name %></div>
-        <div class="panel-body center"><%= link_to image_tag(product.primary_image), product %></div>
+        <div class="panel-body center"><%= link_to image_tag(product.primary_image),
+          product %></div>
         <div class="panel-footer">
           <div class="row">
             <div class="col-md-2">
@@ -14,10 +15,12 @@
               <span class="label-price"><%= product.current_price %></span>
             </div>
             <div class="col-md-4">
-              <%= link_to t(".add_cart"), items_path(id: 1, product_id: product.id, qty: Settings.default.quantity), method: :post, remote: true, class: "btn-success form-control center" %>
+              <%= link_to t(".add_cart"), items_path(id: 1, product_id: product.id, qty: Settings.default.quantity), method: :post, remote: true,
+                class: "btn-success form-control center" %>
             </div>
             <div class="col-md-6 pull-right">
-              <%= link_to t(".view_detail"), product, class: "btn-success form-control center" %>
+              <%= link_to t(".view_detail"), product,
+                class: "btn-success form-control center" %>
             </div>
           </div>
         </div>

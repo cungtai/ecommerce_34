@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/profile", to: "page#profile"
   get "/settings", to: "page#settings"
 
-  root "pages#index"
+  root "products#index"
   get "/home", to: "pages#index"
   get "/pages/:pagename", to: "pages#page", as: "pages"
   # get "/signup", to: "registers#new"
@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   # devise_for :users
   resources :users
   resources :suggest_products
-  resources :products
+  resources :products do
+    collection do
+       get "/catalog/:cat_id", to: "products#catalog", as: "catalog"
+    end
+  end
   resources :orders
   resources :catalogs
   resources :ratings

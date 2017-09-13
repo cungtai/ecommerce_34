@@ -261,3 +261,6 @@ en:
       sure_delete: "Are you sure you wish to delete the product"
   login_to_continue: "Opp!!! Login to continue"
   not_permision: "You have not permision to access admin page"
+  sort_by_price: "Sort by price:"
+  sort_by_name: "Sort by name:"
+  sort_by_quantity: "Sort by quantity:"

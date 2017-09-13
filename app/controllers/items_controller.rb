@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  layout "user/user_layout"
   after_action :update_cart, only: [:create, :update, :destroy]
   before_action :load_item, only: [:create, :update, :destroy]
 
