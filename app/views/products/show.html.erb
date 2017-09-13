@@ -3,7 +3,9 @@
   <div class="col-sm-4">
   <div class="panel panel-primary">
     <div class="panel-heading"><%= @product.name %></div>
-    <div class="panel-body center"><%= image_tag @product.primary_image %></div>
+    <div class="panel-body center"><%= image_tag @product.primary_image,
+      size: Settings.default.product.image_size_show %>
+    </div>
     <div class="panel-footer">
       <div class="row">
         <div class="col-md-6">
