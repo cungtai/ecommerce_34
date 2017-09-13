@@ -1,13 +1,18 @@
 <% provide :title, t("admin.orders.title") %>
 <h1><%= t "admin.pages.show_orders.title" %></h1>
 <div class="container-fluid">
-  <%= form_tag admin_orders_path, method: :get do %>
+  <%= search_form_for [:admin, @search] do |f| %>
     <div class="row">
+      <div class="col-md-2">
+        <%= f.label :receiver_name_or_receiver_email_or_receiver_phone_cont,
+          t("default.find_by_key") %>
+      </div>
       <div class="col-md-6">
-        <%= text_field_tag :search, params[:search], {class: "form-control"} %>
+        <%= f.text_field :receiver_name_or_receiver_email_or_receiver_phone_cont,
+          class: "form-control" %>
       </div>
       <div class="col-md-2">
-        <%= submit_tag t("default.search"), {class: "form-control btn-primary"} %>
+        <%= f.submit t("default.search"), classs: "btn-primary form-control" %>
       </div>
     </div>
   <% end %>
@@ -27,7 +32,7 @@
     <tbody>
       <% @orders.each_with_index do |order, index|%>
         <tr class="<%= set_class order %>" >
-          <td scope="row"><%= show_index_p index %></td>
+          <td scope="row"><%= show_index index %></td>
           <td><%= order.receiver_name %></td>
           <td><%= order.receiver_email %></td>
           <td><%= order.receiver_phone %></td>

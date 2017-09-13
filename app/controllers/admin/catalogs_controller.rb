@@ -1,13 +1,13 @@
 class Admin::CatalogsController < BaseAdminController
   load_and_authorize_resource
   before_action :authenticate_user!
-  before_action :is_admin!
   before_action :load_catalog,
     except: [:create, :new, :index]
 
   def index
-    @catalogs = Catalog.by_name(params[:search]).order_catalogs.paginate(page: params[:page],
-      per_page: Settings.per_page.catalog)
+    @search = Catalog.search(params[:q])
+    @catalogs = @search.result.paginate page: params[:page],
+      per_page: Settings.per_page.catalog
   end
 
   def show

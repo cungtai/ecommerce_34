@@ -10,9 +10,4 @@ module ProductsHelper
       list.map {|key, value| [value, key]}
   end
 
-  def show_index_p index
-    current_page = params[:page].nil? ? 0 : params[:page].to_i - 1
-    current_page * Settings.per_page.product + index + 1
-  end
-
 end

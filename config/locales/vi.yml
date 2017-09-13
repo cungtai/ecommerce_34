@@ -5,6 +5,7 @@ vi:
     next: "Tiếp"
     previous: "Sau"
     update: "Cập nhật"
+    find_by_key: "Từ khoá"
   pages:
     company_name: "Công ty TNHH Trường Tín"
     title: "Công ty TNHH Trường Tín"

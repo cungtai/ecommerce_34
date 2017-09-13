@@ -18,6 +18,7 @@ gem "roo"
 gem "shareable"
 gem "devise"
 gem "cocoon"
+gem "ransack"
 gem "cancancan", "~> 1.10"
 # Use sqlite3 as the database for Active Record
 #gem "sqlite3"

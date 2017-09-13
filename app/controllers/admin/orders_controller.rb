@@ -1,7 +1,8 @@
 class Admin::OrdersController < BaseAdminController
   before_action :authenticate_user!, :load_order, except: [:index, :create]
   def index
-    @orders = Order.by_receiver_name(params[:search]).paginate page: params[:page],
+    @search = Order.search(params[:q])
+    @orders = @search.result.paginate page: params[:page],
       per_page: Settings.per_page.order
   end
 
