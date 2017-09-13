@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170829090731) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "payment_id"
     t.string "receiver_name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170829090731) do
     t.string "receiver_phone"
     t.decimal "amount", precision: 10, default: "0"
     t.string "message"
-    t.integer "status", default: 1
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["payment_id"], name: "index_orders_on_payment_id"

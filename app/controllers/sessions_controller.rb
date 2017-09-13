@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   layout "layouts/user/user_layout"
+  before_action :authenticate_user!
 
   def new
       get_pre_login_url
@@ -30,5 +31,4 @@ class SessionsController < ApplicationController
       @referer_url || root_path
     end
   end
-
 end

@@ -29,14 +29,17 @@ default:
     editor: 1
     user: 2
   order:
-    finished: 0
+    created: 0
     waiting: 1
+    finished: 2
+    min: 1
   order_detail:
     ready: 1
     not_ready: 0
   suggest_product:
     processed: 0
     waiting: 1
+  quantity: 1
   product:
     image_empty: "empty_avatar.png"
     zero_price: 0

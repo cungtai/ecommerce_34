@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %> </h1>
+<div class="row">
+  <h1>
+    <%= t ".order_items" %>: <%= link_to @order.order_details.size.to_s, carts_path %>
+    <%= t ".total_price" %>:<%= @order.total_price %>$</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @order do |f| %>
+
+      <%= f.label :receiver_name %>
+      <%= f.text_field :receiver_name, class: "form-control" %>
+
+      <%= f.label :receiver_email %>
+      <%= f.email_field :receiver_email, class: "form-control" %>
+
+      <%= f.label :receiver_phone %>
+      <%= f.text_field :receiver_phone, class: "form-control" %>
+
+      <%= f.label t(".payment") %>
+      <%= f.select :payment_id, all_payments, {selected: @order.payment_id},
+        {class: "form-control"} %>
+      <br/>
+
+      <%= f.submit t("submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
