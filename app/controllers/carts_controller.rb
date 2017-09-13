@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
   layout "user/user_layout"
-  include AuthHelper
   include CartsHelper
-  before_action :check_login
+  before_action :authenticate_user!, except: :index
   before_action :load_item, only: [:update, :destroy]
 
   def index

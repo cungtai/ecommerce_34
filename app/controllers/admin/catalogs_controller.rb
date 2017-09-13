@@ -1,5 +1,7 @@
 class Admin::CatalogsController < BaseAdminController
-  before_action :authenticate_user!, :is_admin!, :load_catalog,
+  before_action :authenticate_user!
+  before_action :is_admin!
+  before_action :load_catalog,
     except: [:create, :new, :index]
 
   def index

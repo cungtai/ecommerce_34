@@ -9,6 +9,17 @@ class ProductsController < ApplicationController
       .paginate page: params[:page], per_page: Settings.per_page.product
   end
 
+  def catalog
+    @cat_id = params[:cat_id]
+    catalog = Catalog.find_by id: @cat_id
+    if catalog.present?
+      @products = catalog.products.sort_price(params[:sort_price])
+      .sort_name(params[:sort_name]).sort_qty(params[:sort_qty])
+      .paginate page: params[:page], per_page: Settings.per_page.product
+    else
+    end
+  end
+
   def show
     @product.update_attributes viewed: (@product.viewed + Settings.default.product.increase_view)
     save_recently_view if current_user.present?

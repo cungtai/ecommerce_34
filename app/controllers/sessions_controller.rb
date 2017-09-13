@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   layout "layouts/user/user_layout"
-  before_action :authenticate_user!
 
   def new
       get_pre_login_url
