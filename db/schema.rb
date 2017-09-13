@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829090731) do
+ActiveRecord::Schema.define(version: 20170914012453) do
 
   create_table "catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20170829090731) do
     t.integer "number_of_order", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["catalog_id"], name: "index_products_on_catalog_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

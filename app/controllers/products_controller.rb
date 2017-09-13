@@ -27,11 +27,14 @@ class ProductsController < ApplicationController
 
   private
   def load_product
-    @product = Product.find_by id: params[:id]
-    unless @product
-      flash[:danger] = t "products.not_found"
+      @product = Product.friendly.find params[:id]
+      unless @product
+        flash[:danger] = t "products.not_found"
+        redirect_to root_url
+      end
+    rescue ActiveRecord::RecordNotFound
+      flash[:danger] = t "products.invalid_url"
       redirect_to root_url
-    end
   end
 
   def save_recently_view
