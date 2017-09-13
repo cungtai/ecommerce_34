@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # devise_for :users
   resources :users
   resources :suggest_products
+  resources :static_pages
   resources :products do
     collection do
        get "/catalog/:cat_id", to: "products#catalog", as: "catalog"

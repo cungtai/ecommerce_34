@@ -1,0 +1,15 @@
+current directory: /Users/ossierra/ecommerce_34/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+/Users/ossierra/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170915-34805-v6edu6.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ossierra/ecommerce_34/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/ossierra/ecommerce_34/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/ossierra/ecommerce_34/vendor/bundle/ruby/2.4.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20170915-34805-yaklo0/bindex

@@ -41,7 +41,7 @@
             <td><%= product.tag %></td>
             <% if can? :manage, product %>
               <td>
-                <%= link_to edit_admin_product_path product do %>
+                <%= link_to edit_admin_product_path product.id do %>
                   <strong class="glyphicon glyphicon-pencil"></strong>
                 <% end %>
               </td>

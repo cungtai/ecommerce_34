@@ -1,0 +1,53 @@
+<% provide :title, t("admin.staticpages.index.title") %>
+<h1><%= t("admin.staticpages.index.title") %></h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t "admin.staticpages.index.title" %></div>
+    <div class="panel-body">
+      <%= search_form_for [:admin, @search] do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.text_field :key_cont, placeholder: t("default.search"),
+              class: "form-control" %>
+          </div>
+          <div class="col-md-2">
+            <%= f.submit t("default.search"), class: "btn-primary form-control" %>
+          </div>
+        </div>
+      <% end %>
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>#</th>
+            <th><%= t("admin.pages.show_staticpages.name") %></th>
+            <th><%= t("admin.pages.show_staticpages.value") %></th>
+            <th><%= t("admin.pages.show_staticpages.user") %></th>
+            <th>#</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @static_pages.each_with_index do |staticpage, index| %>
+            <tr>
+              <td><%= show_index index %></td>
+              <td><%= link_to staticpage.key, staticpage %></td>
+              <td><%= staticpage.value %></td>
+              <td><%= staticpage.user_id %></td>
+              <td>
+                <%= link_to edit_admin_static_page_path staticpage do %>
+                  <strong class="glyphicon glyphicon-pencil"></strong>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to [:admin, staticpage], metdod: :delete,
+                  data: {confirm: t("default.you_sure")} do %>
+                  <strong class="glyphicon glyphicon-trash"></strong>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @static_pages %>
+    </div>
+  </div>
+</div>

@@ -57,7 +57,7 @@ class Admin::ProductsController < BaseAdminController
   end
 
   def load_product
-    @product = Product.find_by id: params[:id]
+    @product = Product.friendly.find params[:id]
     unless @product
       flash[:danger] = t "admin.products.general.product_not_found"
       redirect_to request.referer

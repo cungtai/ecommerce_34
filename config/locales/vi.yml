@@ -1,11 +1,15 @@
 vi:
   default:
+    email_demo: "cnptai@hueic.edu.vn"
+    email_week_title: "Khuyến mãi lớn từ Trường Tín Laptop"
     search: "Tìm kiếm"
     you_sure: "Bạn chắc chắn muốn xoá mục này?"
     next: "Tiếp"
     previous: "Sau"
     update: "Cập nhật"
     find_by_key: "Từ khoá"
+    body_email_weekly: "Chúng tôi hân hạnh gửi đến quý khách hàng danh sách các sản phẩm khuyến mãi sau:"
+    footer_email_weekly: "Công ty TNHH Trường Tín"
   pages:
     company_name: "Công ty TNHH Trường Tín"
     title: "Công ty TNHH Trường Tín"
@@ -60,6 +64,23 @@ vi:
         create_fail: "Có lỗi xảy ra khi tạo danh mục!"
         title: "Thêm mới danh mục"
         create_button: "Thêm mới"
+    staticpages:
+      index:
+        title: "Danh mục các trang tĩnh"
+        staticpage_not_found: "Không tìm thấy trang!"
+      update:
+        update_success: "Cập nhật thành công!"
+        update_fail: "Có lỗi xảy ra!"
+        title: "Cập nhật thông tin trang tĩnh"
+        save_change: "Lưu lại"
+      delete:
+        delete_success: "Đã xoá thành công!"
+        delete_fail: "Có lỗi xảy ra!"
+      create:
+        create_success: "Tạo trang thành công!"
+        create_fail: "Có lỗi khi tạo trang!"
+        title: "Tạo trang thông tin tĩnh"
+        create_button: "Tạo mới"
     products:
       default:
         product_not_found: "The product is not found!"

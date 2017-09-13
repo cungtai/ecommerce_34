@@ -1,0 +1,18 @@
+<% provide :title, t("admin.staticpages.create.title") %>
+<h1 class="col-sm-8 col-sm-offset-4"><%= t("admin.staticpages.create.title") %></h1>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for [:admin, @static_page], html: {multipart: true} do |f| %>
+      <div class="form-group">
+        <%= f.label :key %>
+        <%= f.text_field :key, class: "form-control", required: true %>
+      </div>
+      <div class="form-group">
+        <%= f.label :value %>
+        <%= f.text_area :value, id: "content_editor", class: "form-control" %>
+      </div>
+      <%= f.submit t("admin.staticpages.create.create_button"),
+        class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

@@ -5,11 +5,9 @@
     <div class="panel-body">
     <%= search_form_for [:admin, @search] do |f| %>
       <div class="row">
-        <div class="col-md-2">
-          <%= f.label :name_cont, t("default.find_by_key") %>
-        </div>
         <div class="col-md-6">
-          <%= f.text_field :name_cont, class: "form-control" %>
+          <%= f.text_field :name_cont, placeholder: t("default.search"),
+            class: "form-control" %>
         </div>
         <div class="col-md-2">
           <%= f.submit t("default.search"), class: "btn-primary form-control" %>
