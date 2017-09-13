@@ -85,6 +85,8 @@ GEM
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -266,6 +268,9 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.6)
+    wysiwyg-rails (2.6.6)
+      font-awesome-sass (~> 4.4, >= 4.4.0)
+      railties (>= 3.2, < 6.0)
 
 PLATFORMS
   ruby
@@ -310,6 +315,7 @@ DEPENDENCIES
   uglifier (= 3.2.0)
   web-console (= 3.5.1)
   will_paginate (>= 3.0)
+  wysiwyg-rails
 
 BUNDLED WITH
    1.15.4

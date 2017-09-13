@@ -53,7 +53,7 @@ class Admin::ProductsController < BaseAdminController
   private
   def product_params
     params.require(:product).permit :name, :qty,
-      :tag, :catalog_id, images_attributes: [:id, :url, :name, :is_primary, :_destroy]
+      :tag, :catalog_id, :content, images_attributes: [:id, :url, :name, :is_primary, :_destroy]
   end
 
   def load_product

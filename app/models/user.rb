@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :lockable
   # mount_uploader :avatar, AvatarUploader
   mount_uploader :avatar, AvatarUploader
   has_many :recently_vieweds, dependent: :destroy
@@ -13,7 +14,7 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :products, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: Settings.maximum.name}
+  validates :name, length: {maximum: Settings.maximum.name}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

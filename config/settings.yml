@@ -15,6 +15,7 @@ minimum:
   content: 50
   avatar: 32
 default:
+  user_id: 1
   recently: 12
   round: 1
   static_page:
