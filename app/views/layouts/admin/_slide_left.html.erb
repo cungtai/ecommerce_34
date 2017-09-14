@@ -1,79 +1,130 @@
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="nav-side-menu">
-    <div class="brand"><%= t "admin.bar.title" %></div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+<aside class="sidebar-left">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><%= t "admin.bar.title" %></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="sidebar-menu">
+          <li><hr/></li>
+          <li>
+            <a href="#">
+            <i class="fa fa-th"></i> <span><%= t ".dashboard" %></span>
+            </a>
+          </li>
 
-        <div class="menu-list">
-
-            <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <i class="fa fa-dashboard fa-lg"></i>
-                  <%= link_to t("admin.menu.dashboard"),  "#" %>
-                </li>
-
-                <li  data-toggle="collapse" data-target="#users" class="collapsed active">
-                  <i class="fa fa-gift fa-lg"></i>
-                  <%= t "admin.menu.users" %>
-                  <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu collapse" id="users">
-                    <li class="active">
-                      <%= link_to t("admin.menu.all_users"), admin_users_path %></li>
-                    <li>
-                      <%= link_to t("admin.menu.add_user"), new_admin_user_path %>
-                    </li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <i class="fa fa-globe fa-lg"></i>
-                  <%= t "admin.menu.catalogs" %>
-                  <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu collapse" id="service">
-                  <li><%= link_to t("admin.menu.catalogs"), admin_catalogs_path %></li>
-                  <li><%= link_to t("admin.menu.add_catalog"), new_admin_catalog_path %></li>
-                </ul>
-
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <i class="fa fa-car fa-lg"></i>
-                  <%= t "admin.menu.products" %>
-                  <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu collapse" id="new">
-                  <li><%= link_to t("admin.menu.all_products"), admin_products_path %></li>
-                  <li><%= link_to t("admin.menu.add_product"), new_admin_product_path %></li>
-                </ul>
-                <li>
-                  <i class="fa fa-user fa-lg"></i>
-                  <%= link_to t("admin.menu.orders"), admin_orders_path %>
-                </li>
-                <li data-toggle="collapse" data-target="#payments" class="collapsed">
-                  <i class="fa fa-car fa-lg"></i>
-                  <%= t "admin.menu.payments" %>
-                  <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu collapse" id="payments">
-                  <li><%= link_to t("admin.menu.all_payments"), "#" %></li>
-                  <li><%= link_to t("admin.menu.add_payment"), "#" %></li>
-                </ul>
-                 <li>
-                  <i class="fa fa-users fa-lg"></i>
-                  <%= link_to t("admin.menu.suggest_products"), admin_suggest_products_path %>
-                </li>
-                <li>
-                  <i class="fa fa-users fa-lg"></i>
-                  <%= link_to t("admin.menu.feedback"), "#" %>
-                </li>
-                <li data-toggle="collapse" data-target="#staticpages" class="collapsed">
-                  </i> <%= t "admin.menu.static_pages" %>
-                  <span class="arrow"></span>
-                </li>
-                <ul class="sub-menu collapse" id="staticpages">
-                  <li><%= link_to t("admin.menu.all_static_pages"), admin_static_pages_path %></li>
-                  <li><%= link_to t("admin.menu.add_static_page"), new_admin_static_page_path %></li>
-                </ul>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-dashboard"></i>
+              <span><%= t "admin.menu.users" %></span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to admin_users_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.all_users" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_admin_user_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.all_users" %>
+                <% end %>
+              </li>
             </ul>
-     </div>
-</div>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span><%= t "admin.menu.catalogs" %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to admin_catalogs_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.catalogs" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_admin_catalog_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.add_catalog" %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <%= link_to admin_orders_path do %>
+              <i class="fa fa-th"></i>
+              <span><%= t "admin.menu.orders" %></span>
+            <% end %>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span><%= t "admin.menu.payments" %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to admin_payments_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.payments" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_admin_payment_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.add_payment" %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <%= link_to admin_suggest_products_path do %>
+              <i class="fa fa-th"></i>
+              <span><%= t "admin.menu.suggest_products" %></span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to admin_feedbacks_path do %>
+              <i class="fa fa-th"></i>
+              <span><%= t "admin.menu.feedbacks" %></span>
+            <% end %>
+          </li>
+
+          <li class="treeview">
+            <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span><%= t "admin.menu.static_pages" %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li>
+                <%= link_to admin_static_pages_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.static_pages" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_admin_static_page_path do %>
+                  <i class="fa fa-circle-o"></i>
+                  <%= t "admin.menu.add_static_page" %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+</aside>

@@ -35,6 +35,8 @@ Rails.application.routes.draw do
     resources :suggest_products
     resources :catalogs
     resources :static_pages
+    resources :payments
+    resources :feedbacks
 
     resources :products do
       collection do

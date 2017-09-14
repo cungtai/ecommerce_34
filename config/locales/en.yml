@@ -91,6 +91,7 @@ en:
         quantity: "Quantity"
         viewed: "Viewed"
         tag: "Tag"
+        search: "Search"
       create:
         title: "Create Product"
         create_success: "The product is created successfully!"

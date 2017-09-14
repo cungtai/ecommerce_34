@@ -9,34 +9,18 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-  <div class="container-fluid">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-3">
-          <div class="col-md-3"><%= render "layouts/admin/slide_left" %></div>
-        </div>
-        <div class="col-md-9" id="wrapper">
-          <div class="row-md-12">
-              <%= render "layouts/admin/header" %>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <% flash.each do |message_type, message| %>
-                <div class="alert alert-<%= message_type %>">
-                  <%= message %>
-                </div>
-              <% end %>
-            </div>
-            <div class="col-md-12">
-              <%= yield %>
-            </div>
-          </div>
-        </div>
+    <%= render "layouts/admin/slide_left" %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+        <%= message %>
       </div>
-      <hr>
-      <div class="footer navbar-fixed-bottom">
-        <%= render "layouts/admin/footer" %>
+    <% end %>
+    <div class="content container-fluid">
+      <div class="col-sm-12">
+        <%= yield %>
       </div>
-    </div> <!-- /container -->
+      <%= render "layouts/admin/footer" %>
+    </div>
+
   </body>
 </html>
