@@ -43,6 +43,13 @@ en:
         email: "Email"
         address: "Address"
         phone: "Phone"
+    users:
+      index:
+        title: "Users Information"
+      edit:
+        title: "Edit user"
+      new:
+        title: "Create new user"
     catalogs:
       index:
         title: "All Catalogs"
