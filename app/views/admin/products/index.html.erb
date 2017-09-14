@@ -36,17 +36,19 @@
             <td><%= product.qty %></td>
             <td><%= product.viewed %></td>
             <td><%= product.tag %></td>
-            <td>
-              <%= link_to edit_admin_product_path product do %>
-                <strong class="glyphicon glyphicon-pencil"></strong>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to [:admin, product], method: :delete,
-                data: {confirm: t("default.you_sure")} do %>
-                <strong class="glyphicon glyphicon-trash"></strong>
-              <% end %>
-            </td>
+            <% if can? :manage, product %>
+              <td>
+                <%= link_to edit_admin_product_path product do %>
+                  <strong class="glyphicon glyphicon-pencil"></strong>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to [:admin, product], method: :delete,
+                  data: {confirm: t("default.you_sure")} do %>
+                  <strong class="glyphicon glyphicon-trash"></strong>
+                <% end %>
+              </td>
+            <% end %>
         </tr>
       <% end %>
     </tbody>

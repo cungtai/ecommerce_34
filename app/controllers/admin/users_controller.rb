@@ -1,6 +1,7 @@
 class Admin::UsersController < BaseAdminController
+  load_and_authorize_resource
   before_action :authenticate_user!
-  before_action :load_user, only: [:edit,:update,:destroy]
+  before_action :load_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.by_name(params[:search]).paginate page: params[:page],

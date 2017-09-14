@@ -1,5 +1,5 @@
 <% provide :title, t("admin.pages.show_users.title") %>
-<h1><%= t("admin.pages.show_users.title") %></h1>
+<h1><%= t "admin.pages.show_users.title" %></h1>
 <div class="container-fluid">
   <%= form_tag admin_users_path, method: :get, id: "search_form" do %>
     <div class="row">
@@ -33,15 +33,18 @@
             <td><%= user.email %></td>
             <td><%= user.address %></td>
             <td><%= user.phone %></td>
-            <td><%= link_to edit_admin_user_path user do %>
-              <strong class="glyphicon glyphicon-pencil"></strong>
-              <% end %></td>
-            <td>
-              <%= link_to [:admin, user], method: :delete,
-                data: {confirm: t("default.you_sure")} do %>
-                <strong class="glyphicon glyphicon-trash"></strong>
-              <% end %>
-            </td>
+            <% if can? :manage, user %>
+              <td>
+                <%= link_to edit_admin_user_path user do %>
+                  <strong class="glyphicon glyphicon-pencil"></strong>
+                <% end %></td>
+              <td>
+                <%= link_to [:admin, user], method: :delete,
+                  data: {confirm: t("default.you_sure")} do %>
+                  <strong class="glyphicon glyphicon-trash"></strong>
+                <% end %>
+              </td>
+            <% end %>
         </tr>
       <% end %>
     </tbody>

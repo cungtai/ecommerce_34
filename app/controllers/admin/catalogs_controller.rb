@@ -1,4 +1,5 @@
 class Admin::CatalogsController < BaseAdminController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :is_admin!
   before_action :load_catalog,
