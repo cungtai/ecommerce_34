@@ -1,3 +1,0 @@
-module RecentlyProductsHelper
-
-end

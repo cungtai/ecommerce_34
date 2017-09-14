@@ -15,7 +15,7 @@
       <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label t ".description" %>
-      <%= f.email_field :description, class: "form-control" %>
+      <%= f.text_field :description, class: "form-control" %>
 
       <%= f.label t ".price" %>
       <%= f.text_field :price, class: "form-control" %>
@@ -23,12 +23,7 @@
       <%= f.label t ".user_name" %>
       <%= f.label @suggest_product.user.name, class: "form-control" %>
 
-      <%= f.label t(".status") %>
-      <%= f.select :status, suggest_products_status, {selected: @suggest_product.status},
-        {class: "form-control"} %>
-      <br/>
-
-      <%= f.submit t(".save_change"), class: "btn btn-primary" %>
+      <%= f.submit t(".add_to_products"), class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

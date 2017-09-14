@@ -5,4 +5,12 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+
+  def user_roles
+    list = Hash.new
+    list[:admin] = t "admin.role.admin"
+    list[:editor] = t "admin.role.editor"
+    list[:user] = t "admin.role.user"
+    list.map{|key, value| [value, key.to_s]}
+  end
 end

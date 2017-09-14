@@ -1,85 +1,79 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="nav-side-menu">
-    <div class="brand"><%= t("admin.bar.title") %></div>
+    <div class="brand"><%= t "admin.bar.title" %></div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
 
             <ul id="menu-content" class="menu-content collapse out">
                 <li>
-                  <a href="#">
-                  <i class="fa fa-dashboard fa-lg"></i><%= t("admin.menu.dashboard")%>
-                  </a>
+                  <i class="fa fa-dashboard fa-lg"></i>
+                  <%= link_to t("admin.menu.dashboard"),  "#" %>
                 </li>
 
                 <li  data-toggle="collapse" data-target="#users" class="collapsed active">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i><%= t("admin.menu.users")%><span class="arrow"></span></a>
+                  <i class="fa fa-gift fa-lg"></i>
+                  <%= t "admin.menu.users" %>
+                  <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="users">
-                    <li class="active"><a href="#"><%= t("admin.menu.all_users") %></a></li>
-                    <li><a href="#"><%= t("admin.menu.add_user") %></a></li>
+                    <li class="active">
+                      <%= link_to t("admin.menu.all_users"), admin_users_path %></li>
+                    <li>
+                      <%= link_to t("admin.menu.add_user"), new_admin_user_path %>
+                    </li>
                 </ul>
 
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> <%= t("admin.menu.catalogs") %> <span class="arrow"></span></a>
+                  <i class="fa fa-globe fa-lg"></i>
+                  <%= t "admin.menu.catalogs" %>
+                  <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="service">
-                  <li><%= t("admin.menu.all_catalogs") %></li>
-                  <li><%= t("admin.menu.add_catalog") %></li>
+                  <li><%= link_to t("admin.menu.catalogs"), admin_catalogs_path %></li>
+                  <li><%= link_to t("admin.menu.add_catalog"), new_admin_catalog_path %></li>
                 </ul>
 
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.products") %> <span class="arrow"></span></a>
+                  <i class="fa fa-car fa-lg"></i>
+                  <%= t "admin.menu.products" %>
+                  <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="new">
-                  <li><%= t("admin.menu.all_products") %></li>
-                  <li><%= t("admin.menu.add_product") %></li>
+                  <li><%= link_to t("admin.menu.all_products"), admin_products_path %></li>
+                  <li><%= link_to t("admin.menu.add_product"), new_admin_product_path %></li>
                 </ul>
                 <li>
-                  <a href="#">
-                  <i class="fa fa-user fa-lg"></i> <%= t("admin.menu.orders") %>
-                  </a>
-                  </li>
-                  <li data-toggle="collapse" data-target="#payments" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.payments") %> <span class="arrow"></span></a>
+                  <i class="fa fa-user fa-lg"></i>
+                  <%= link_to t("admin.menu.orders"), admin_orders_path %>
+                </li>
+                <li data-toggle="collapse" data-target="#payments" class="collapsed">
+                  <i class="fa fa-car fa-lg"></i>
+                  <%= t "admin.menu.payments" %>
+                  <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="payments">
-                  <li><%= t("admin.menu.all_payments") %></li>
-                  <li><%= t("admin.menu.add_payment") %></li>
+                  <li><%= link_to t("admin.menu.all_payments"), "#" %></li>
+                  <li><%= link_to t("admin.menu.add_payment"), "#" %></li>
                 </ul>
                  <li>
-                  <a href="#">
-                  <i class="fa fa-users fa-lg"></i> <%= t("admin.menu.suggest_products") %>
-                  </a>
+                  <i class="fa fa-users fa-lg"></i>
+                  <%= link_to t("admin.menu.suggest_products"), admin_suggest_products_path %>
                 </li>
                 <li>
-                  <a href="#">
-                  <i class="fa fa-users fa-lg"></i> <%= t("admin.menu.feedback") %>
-                  </a>
+                  <i class="fa fa-users fa-lg"></i>
+                  <%= link_to t("admin.menu.feedback"), "#" %>
                 </li>
-                <li>
-                  <a href="#">
-                  <i class="fa fa-user fa-lg"></i> <%= t("admin.menu.static_pages") %>
-                  </a>
-                  </li>
-                  <li data-toggle="collapse" data-target="#staticpages" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> <%= t("admin.menu.static_pages") %> <span class="arrow"></span></a>
+                <li data-toggle="collapse" data-target="#staticpages" class="collapsed">
+                  </i> <%= t "admin.menu.static_pages" %>
+                  <span class="arrow"></span>
                 </li>
                 <ul class="sub-menu collapse" id="staticpages">
-                  <li><%= t("admin.menu.all_static_pages") %></li>
-                  <li><%= t("admin.menu.add_static_page") %></li>
+                  <li><%= link_to t("admin.menu.all_static_pages"), admin_static_pages_path %></li>
+                  <li><%= link_to t("admin.menu.add_static_page"), new_admin_static_page_path %></li>
                 </ul>
-                <!-- .logout wAS HERE -->
             </ul>
-            <!-- MOVED TO HERE -->
-            <div class="logout">
-                <li>
-                    <a>
-                      <i class="glyphicon glyphicon-off"></i> LOGOUT
-                     </a>
-                </li>
-             </div>
      </div>
 </div>

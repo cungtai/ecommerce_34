@@ -143,6 +143,7 @@ en:
         price: "Price"
         user_name: "Username"
         status: "Status"
+        add_to_products: "Add to products"
       update:
         success: "Update Success"
         failed: "Update failed"
