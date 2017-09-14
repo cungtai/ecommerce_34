@@ -20,6 +20,7 @@ gem "devise"
 gem "cocoon"
 gem "ransack"
 gem "cancancan", "~> 1.10"
+gem "friendly_id", "~> 5.1.0"
 # Use sqlite3 as the database for Active Record
 #gem "sqlite3"
 # Use Puma as the app server

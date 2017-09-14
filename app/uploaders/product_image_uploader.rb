@@ -7,7 +7,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-     ActionController::Base.helpers.asset_path ([version_name,"empty_avatar.png"].compact.join("_"))
+     ActionController::Base.helpers.asset_path ([version_name,"default_product.png"].compact.join("_"))
   end
 
   def extension_white_list

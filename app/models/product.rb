@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
+  attr_accessor :title
+  extend FriendlyId
 
+  friendly_id :name, use: [:slugged]
   belongs_to :user
   belongs_to :catalog
   has_many :order_details, dependent: :destroy
