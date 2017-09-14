@@ -1,48 +1,72 @@
 <% provide :title, t("admin.products.create.title") %>
 <h4><%= t("admin.products.create.title") %></h4>
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
+<div class="container">
     <%= form_for [:admin, @product], multipart: true do |f| %>
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-control", required: true %>
-      </div>
-      <div class="form-group">
-        <%= f.label :quantity %>
-        <%= f.text_field :qty, class: "form-control", required: true %>
-      </div>
-      <div class="form-group">
-        <%= f.label :tag %>
-        <%= f.text_field :tag, class: "form-control", required: true %>
-      </div>
-      <div class="form-group">
-        <%= f.label :catalog %>
-        <%= f.collection_select :catalog_id, Catalog.order_catalogs, :id, :name,
-          {}, {class: "form-control"} %>
-      </div>
-      <div class="form-group">
-        <%= f.fields_for :images do |images_form| %>
-        <div id="duplicatable_nested_form">
-          <%= f.label :Image_Name %>
-          <%= images_form.text_field :name, class: "form-control" %>
-          <%= f.label :Image %>
-          <%= images_form.file_field :url, class: "form-control" %>
-          <%= images_form.check_box :is_primary %>
-          <%= f.label :is_primary %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :name %>
         </div>
-        <% end %>
+        <div class="col-md-4">
+          <%= f.text_field :name, required: true %>
+        </div>
       </div>
-      <%= f.submit t("admin.products.create.create_button"),
-        class: "btn btn-primary btn-block" %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :quantity %>
+        </div>
+        <div class="col-md-4">
+          <%= f.text_field :qty, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :tag %>
+        </div>
+        <div class="col-md-4">
+          <%= f.text_field :tag, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :catalog %>
+        </div>
+        <div class="col-md-4">
+          <%= f.collection_select :catalog_id, Catalog.order_catalogs, :id, :name,
+            {}, {} %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <%= f.fields_for :images do |images_form| %>
+            <%= render "image_fields", f: images_form %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association t("admin.products.create.add_image"), f, :images %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.submit t("admin.products.create.create_button"),
+            class: "btn btn-primary btn-block" %>
+        </div>
+      </div>
     <% end %>
-    <h4><%= t "admin.products.import.title" %></h4>
-    <div>
-      <%= link_to t("admin.products.default.link_file_download"),
-        Settings.default.link_file_import_products %>
+    <div class="row">
+      <div class="col-md-4"><h4><%= t "admin.products.import.title" %></h4></div>
+      <div class="col-md-4">
+        <%= link_to t("admin.products.default.link_file_download"),
+          Settings.default.link_file_import_products %>
+      </div>
     </div>
     <%= form_tag import_admin_products_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag t("admin.products.import.import_button"), class: "btn btn-primary" %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= file_field_tag :file %>
+      </div>
+      <div class="col-md-4">
+        <%= submit_tag t("admin.products.import.import_button"), class: "btn btn-primary" %>
+      </div>
+    </div>
     <% end %>
-  </div>
 </div>

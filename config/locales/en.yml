@@ -95,6 +95,8 @@ en:
         create_success: "The product is created successfully!"
         create_fail: "Fail to create this product!"
         create_button: "Create New"
+        remove_image: "Remove Image"
+        add_image: "Add Image"
       delete:
         delete_success: "The product is deleted successfully!"
         delete_fail: "Fail to delete this product!"

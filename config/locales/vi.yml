@@ -76,6 +76,8 @@ vi:
         create_success: "Tạo mới sản phẩm thành công!"
         create_fail: "Có lỗi xảy ra khi tạo sản phẩm!"
         create_button: "Tạo mới"
+        remove_image: "Xoá ảnh"
+        add_image: "Thêm ảnh"
       delete:
         delete_success: "Xoá thành công sản phẩm này!"
         delete_fail: "Có lỗi xảy ra khi xoá sản phẩm này!"

@@ -1,0 +1,26 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-md-2"><%= f.label :Image_Name %></div>
+    <div class="col-md-4"><%= f.text_field :name %></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"><%= f.label :Image %></div>
+    <div class="col-md-4"><%= f.file_field :url %></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.check_box :is_primary %>
+      <%= f.label :is_primary %>
+    </div>
+    <% if f.object.url.present? %>
+      <div class="col-md-4">
+        <%= image_tag f.object.url, size: Settings.default.product.image_size %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to_remove_association t("admin.products.create.remove_image"), f %>
+    </div>
+  </div>
+</div>
