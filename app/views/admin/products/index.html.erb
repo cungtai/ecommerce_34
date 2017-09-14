@@ -1,15 +1,20 @@
 <% provide :title, t("admin.products.index.title") %>
 <h1><%= t("admin.products.index.title") %></h1>
 <div class="container-fluid">
-  <%= form_tag admin_products_path, method: :get do %>
-    <div class="row">
-      <div class="col-md-6">
-        <%= text_field_tag :search, params[:search], {class: "form-control"} %>
-      </div>
-      <div class="col-md-2">
-        <%= submit_tag t("default.search"), {class: "form-control btn-primary"} %>
-      </div>
+  <%= search_form_for [:admin, @search] do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label :name_or_qty_or_tag_cont,
+        t("default.find_by_key") %>
     </div>
+    <div class="col-md-6">
+      <%= f.text_field :name_or_qty_or_tag_cont,
+        class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit t("default.search"), classs: "btn-primary form-control" %>
+    </div>
+  </div>
   <% end %>
   <table class="table">
     <thead class="thead-inverse">
@@ -22,12 +27,12 @@
         <th><%= t("admin.products.index.tag") %></th>
         <th>#</th>
         <th>#</th>
-      </tr>
-    </thead>
-    <tbody>
+    </tr>
+  </thead>
+  <tbody>
       <% @products.each_with_index do |product, index| %>
         <tr>
-            <td scope="row"><%= show_index_p index %></td>
+            <td scope="row"><%= show_index index %></td>
             <td>
               <%= image_tag product.primary_image, size: Settings.default.product.image_size,
               alt: product.name, class: "gravatar" %>

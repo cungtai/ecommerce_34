@@ -11,8 +11,9 @@ class Admin::ProductsController < BaseAdminController
   def show; end
 
   def index
-    @products = Product.by_name(params[:search]).paginate(page: params[:page],
-      per_page: Settings.per_page.product)
+    @search = Product.search(params[:q])
+    @products = @search.result.paginate page: params[:page],
+      per_page: Settings.per_page.product
   end
 
   def create

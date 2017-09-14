@@ -1,13 +1,16 @@
 <% provide :title, t("admin.pages.show_users.title") %>
 <h1><%= t "admin.pages.show_users.title" %></h1>
 <div class="container-fluid">
-  <%= form_tag admin_users_path, method: :get, id: "search_form" do %>
+  <%= search_form_for [:admin, @search] do |f| %>
     <div class="row">
+      <div class="col-md-2">
+        <%= f.label :name_or_email_or_address_or_phone_cont, t("default.find_by_key") %>
+      </div>
       <div class="col-md-6">
-        <%= text_field_tag :search, params[:search], {class: "form-control"} %>
+        <%= f.text_field :name_or_email_or_address_or_phone_cont, class: "form-control" %>
       </div>
       <div class="col-md-2">
-        <%= submit_tag t("default.search"), {class: "form-control btn-primary"} %>
+        <%= f.submit t("default.search"), class: "btn-primary form-control" %>
       </div>
     </div>
   <% end %>
@@ -22,29 +25,26 @@
         <th><%= t("admin.pages.show_users.phone") %></th>
         <th>#</th>
         <th>#</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
       <% @users.each_with_index do |user, index| %>
         <tr>
-            <td scope="row"><%= (index + 1).to_s %></td>
-            <td><%= gravatar_for user, size: Settings.maximum.avatar %></td>
-            <td><%= link_to user.name, user %></td>
-            <td><%= user.email %></td>
-            <td><%= user.address %></td>
-            <td><%= user.phone %></td>
-            <% if can? :manage, user %>
-              <td>
-                <%= link_to edit_admin_user_path user do %>
-                  <strong class="glyphicon glyphicon-pencil"></strong>
-                <% end %></td>
-              <td>
-                <%= link_to [:admin, user], method: :delete,
-                  data: {confirm: t("default.you_sure")} do %>
-                  <strong class="glyphicon glyphicon-trash"></strong>
-                <% end %>
-              </td>
+          <td><%= show_index index %></td>
+          <td><%= gravatar_for user, size: Settings.maximum.avarta %></td>
+          <td><%= link_to user.name, user %></td>
+          <td><%= user.email %></td>
+          <td><%= user.address %></td>
+          <td><%= user.phone %></td>
+          <td><%= link_to edit_admin_user_path user do %>
+            <strong class="glyphicon glyphicon-pencil"></strong>
+            <% end %></td>
+          <td>
+            <%= link_to [:admin, user], metdod: :delete,
+              data: {confirm: t("default.you_sure")} do %>
+              <strong class="glyphicon glyphicon-trash"></strong>
             <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
