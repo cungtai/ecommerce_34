@@ -1,10 +1,10 @@
 <% provide :title, t("admin.products.update.title") %>
-<h1><%= t("admin.products.update.title") %></h1>
+<h4><%= t("admin.products.update.title") %></h4>
 
 <div class="container">
     <%= form_for [:admin, @product] do |f| %>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
           <%= f.label :name %>
         </div>
         <div class="col-md-4">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
           <%= f.label :quantity %>
         </div>
         <div class="col-md-4">
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
           <%= f.label :tag %>
         </div>
         <div class="col-md-4">
@@ -28,12 +28,20 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-2">
           <%= f.label :catalog %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.collection_select :catalog_id, Catalog.order_catalogs, :id, :name,
             {}, {class: "form-control"} %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :content %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_area :content, id: "content_editor" %>
         </div>
       </div>
       <div class="row">

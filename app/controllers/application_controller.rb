@@ -28,8 +28,4 @@ class ApplicationController < ActionController::Base
     @catalogs = Catalog.all
   end
 
-  def show_index index
-    current_page = params[:page].nil? ? 0 : params[:page].to_i - 1
-    current_page * Settings.per_page.num_row_per_page + index + 1
-  end
 end
