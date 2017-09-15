@@ -1,37 +1,35 @@
 <% provide :title, t("admin.products.index.title") %>
-<h1><%= t("admin.products.index.title") %></h1>
-<div class="container-fluid">
-  <%= search_form_for [:admin, @search] do |f| %>
-  <div class="row">
-    <div class="col-md-2">
-      <%= f.label :name_or_qty_or_tag_cont,
-        t("default.find_by_key") %>
-    </div>
-    <div class="col-md-6">
-      <%= f.text_field :name_or_qty_or_tag_cont,
-        class: "form-control" %>
-    </div>
-    <div class="col-md-2">
-      <%= f.submit t("default.search"), classs: "btn-primary form-control" %>
-    </div>
-  </div>
-  <% end %>
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th><%= t("admin.products.index.image") %></th>
-        <th><%= t("admin.products.index.product_name") %></th>
-        <th><%= t("admin.products.index.quantity") %></th>
-        <th><%= t("admin.products.index.viewed") %></th>
-        <th><%= t("admin.products.index.tag") %></th>
-        <th>#</th>
-        <th>#</th>
-    </tr>
-  </thead>
-  <tbody>
-      <% @products.each_with_index do |product, index| %>
+<h2><%= t "admin.products.title" %></h2>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t ".title" %></div>
+  <div class="panel-body">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.text_field :name_or_qty_or_tag_cont, placeholder: t(".search"),
+            class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit t("default.search"), class: "btn-primary form-control" %>
+        </div>
+      </div>
+    <% end %>
+    <table class="table">
+      <thead class="thead-inverse">
         <tr>
+          <th>#</th>
+          <th><%= t("admin.products.index.image") %></th>
+          <th><%= t("admin.products.index.product_name") %></th>
+          <th><%= t("admin.products.index.quantity") %></th>
+          <th><%= t("admin.products.index.viewed") %></th>
+          <th><%= t("admin.products.index.tag") %></th>
+          <th>#</th>
+          <th>#</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @products.each_with_index do |product, index| %>
+          <tr>
             <td scope="row"><%= show_index index %></td>
             <td>
               <%= image_tag product.primary_image, size: Settings.default.product.image_size,
@@ -54,9 +52,10 @@
                 <% end %>
               </td>
             <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @products %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @products %>
+  </div>
 </div>

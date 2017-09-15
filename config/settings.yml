@@ -55,7 +55,7 @@ default:
       sort_desc_names: "sort_desc_names"
       sort_asc_names: "sort_asc_names"
     row_header: 1
-    image_size: 80
+    image_size: 48
     image_size_show: "300"
     empty_image: "empty_avatar.png"
     recently: 12
