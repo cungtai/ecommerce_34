@@ -16,6 +16,7 @@ minimum:
   avatar: 32
 default:
   user_id: 1
+  image_size: 48
   recently: 12
   round: 1
   static_page:

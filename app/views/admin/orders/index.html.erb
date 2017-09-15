@@ -1,57 +1,56 @@
 <% provide :title, t("admin.orders.title") %>
-<h1><%= t "admin.pages.show_orders.title" %></h1>
-<div class="container-fluid">
-  <%= search_form_for [:admin, @search] do |f| %>
-    <div class="row">
-      <div class="col-md-2">
-        <%= f.label :receiver_name_or_receiver_email_or_receiver_phone_cont,
-          t("default.find_by_key") %>
+<h1><%= t "admin.orders.title" %></h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t ".title" %></div>
+    <div class="panel-body">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.text_field :receiver_name_or_receiver_email_or_receiver_phone_cont,
+            placeholder: t("default.search"), class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit t("default.search"), class: "btn-primary form-control" %>
+        </div>
       </div>
-      <div class="col-md-6">
-        <%= f.text_field :receiver_name_or_receiver_email_or_receiver_phone_cont,
-          class: "form-control" %>
-      </div>
-      <div class="col-md-2">
-        <%= f.submit t("default.search"), classs: "btn-primary form-control" %>
-      </div>
-    </div>
-  <% end %>
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th><%= t "orders.receiver_name" %></th>
-        <th><%= t "orders.receiver_email" %></th>
-        <th><%= t "orders.receiver_phone" %></th>
-        <th><%= t "orders.amount" %></th>
-        <th><%= t "orders.status" %></th>
-        <th>#</th>
-        <th>#</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each_with_index do |order, index|%>
-        <tr class="<%= set_class order %>" >
-          <td scope="row"><%= show_index index %></td>
-          <td><%= order.receiver_name %></td>
-          <td><%= order.receiver_email %></td>
-          <td><%= order.receiver_phone %></td>
-          <td><%= order.amount %></td>
-          <td><%= show_status order %></td>
-          <td>
-            <%= link_to edit_admin_order_path(order.id) do %>
-              <strong class="glyphicon glyphicon-pencil"></strong>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to [:admin, order], method: :delete,
-              data: {confirm:t("default.you_sure")} do %>
-                <strong class="glyphicon glyphicon-trash"></strong>
-            <% end %>
-          </td>
+    <% end %>
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>#</th>
+          <th><%= t "orders.receiver_name" %></th>
+          <th><%= t "orders.receiver_email" %></th>
+          <th><%= t "orders.receiver_phone" %></th>
+          <th><%= t "orders.amount" %></th>
+          <th><%= t "orders.status" %></th>
+          <th>#</th>
+          <th>#</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @orders%>
+      </thead>
+      <tbody>
+        <% @orders.each_with_index do |order, index|%>
+          <tr class="<%= set_class order %>" >
+            <td scope="row"><%= show_index index %></td>
+            <td><%= order.receiver_name %></td>
+            <td><%= order.receiver_email %></td>
+            <td><%= order.receiver_phone %></td>
+            <td><%= order.amount %></td>
+            <td><%= show_status order %></td>
+            <td>
+              <%= link_to edit_admin_order_path(order.id) do %>
+                <strong class="glyphicon glyphicon-pencil"></strong>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to [:admin, order], method: :delete,
+                data: {confirm:t("default.you_sure")} do %>
+                  <strong class="glyphicon glyphicon-trash"></strong>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @orders%>
+  </div>
 </div>

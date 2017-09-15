@@ -1,51 +1,54 @@
 <% provide :title, t("admin.catalogs.index.title") %>
 <h1><%= t("admin.catalogs.index.title") %></h1>
-<div class="container-fluid">
-  <%= search_form_for [:admin, @search] do |f| %>
-    <div class="row">
-      <div class="col-md-2">
-        <%= f.label :name_cont, t("default.find_by_key") %>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= t ".title" %></div>
+    <div class="panel-body">
+    <%= search_form_for [:admin, @search] do |f| %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.label :name_cont, t("default.find_by_key") %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :name_cont, class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit t("default.search"), class: "btn-primary form-control" %>
+        </div>
       </div>
-      <div class="col-md-6">
-        <%= f.text_field :name_cont, class: "form-control" %>
-      </div>
-      <div class="col-md-2">
-        <%= f.submit t("default.search"), class: "btn-primary form-control" %>
-      </div>
-    </div>
-  <% end %>
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th><%= t("admin.pages.show_catalogs.name") %></th>
-        <th><%= t("admin.pages.show_catalogs.sort_order") %></th>
-        <th><%= t("admin.pages.show_catalogs.created_at") %></th>
-        <th>#</th>
-        <th>#</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @catalogs.each_with_index do |catalog, index| %>
+    <% end %>
+    <table class="table">
+      <thead class="thead-inverse">
         <tr>
-          <td><%= show_index index %></td>
-          <td><%= link_to catalog.name, catalog %></td>
-          <td><%= catalog.sort_order %></td>
-          <td><%= catalog.created_at %></td>
-          <td>
-            <%= link_to edit_admin_catalog_path catalog do %>
-              <strong class="glyphicon glyphicon-pencil"></strong>
-            <% end %>
-          </td>
-          <td>
-            <%= link_to [:admin, catalog], metdod: :delete,
-              data: {confirm: t("default.you_sure")} do %>
-              <strong class="glyphicon glyphicon-trash"></strong>
-            <% end %>
-          </td>
+          <th>#</th>
+          <th><%= t("admin.pages.show_catalogs.name") %></th>
+          <th><%= t("admin.pages.show_catalogs.sort_order") %></th>
+          <th><%= t("admin.pages.show_catalogs.created_at") %></th>
+          <th>#</th>
+          <th>#</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @catalogs %>
+      </thead>
+      <tbody>
+        <% @catalogs.each_with_index do |catalog, index| %>
+          <tr>
+            <td><%= show_index index %></td>
+            <td><%= link_to catalog.name, catalog %></td>
+            <td><%= catalog.sort_order %></td>
+            <td><%= catalog.created_at %></td>
+            <td>
+              <%= link_to edit_admin_catalog_path catalog do %>
+                <strong class="glyphicon glyphicon-pencil"></strong>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to [:admin, catalog], metdod: :delete,
+                data: {confirm: t("default.you_sure")} do %>
+                <strong class="glyphicon glyphicon-trash"></strong>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @catalogs %>
+  </div>
 </div>
